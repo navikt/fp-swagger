@@ -36,9 +36,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: Run linting
-        run: yarn less:lint && yarn lint && yarn ts-check
-
       - name: Build
         run: |
           echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
