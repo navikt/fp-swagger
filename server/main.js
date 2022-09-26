@@ -9,7 +9,7 @@ import { getIssuer } from './azure/issuer.js';
 
 // for debugging during development
 import config from './config.js';
-import routes from './routes.js.js';
+import routes from './routes.js';
 import { isTokenValid } from "./azure/validate.js";
 
 const server = express();
