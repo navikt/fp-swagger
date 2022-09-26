@@ -12,7 +12,7 @@
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
     "express-rate-limit": "^5.2.6",
-    "helmet": "^4.1.0",
+    "helmet": "^6.0.0",
     "i": "^0.3.7",
     "jose": "^4.9.3",
     "morgan": "^1.9.1",
