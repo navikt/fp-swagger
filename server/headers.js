@@ -7,7 +7,7 @@ export const setup = (app) => {
     res.header("Referrer-Policy", "origin");
     res.header("Strict-Transport-Security", "max-age=31536000")
     res.header("Feature-Policy", "geolocation 'none'; microphone 'none'; camera 'none'");
-    res.header("Cross-Origin-Resource-Policy", "same-site");
+    res.header("Cross-Origin-Resource-Policy", "same-origin");
     next();
   });
 };
