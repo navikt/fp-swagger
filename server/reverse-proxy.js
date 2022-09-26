@@ -1,38 +1,27 @@
 import proxy from 'express-http-proxy';
 import url from 'url';
-import authUtils from '../auth/utils.js';
-import config from '../config.js';
-import logger from '../log.js';
-import { getRedirectUriFromHeader } from '../redirectUri.js';
-import { ulid } from 'ulid'
+import { ulid } from 'ulid';
+
+import { grantAzureOboToken } from './azure/grant.js';
+
+import config from './config.js';
+import logger from './log.js';
 
 const xNavCallId = 'x_Nav-CallId';
 const xTimestamp = 'x-Timestamp';
 
-const proxyOptions = (api, authClient) => ({
-  filter: (req, res) => {
-    logger.debug(`Proxy URL ${api.url}.`);
-    const authenticated = authUtils.hasValidAccessToken(req);
-    logger.debug(`Authenticated = ${authenticated}`);
-    if (!authenticated) {
-      logger.info("Ikke logget inn. Sender til innlogging. (proxy path)");
-      const redirectUri = getRedirectUriFromHeader({ request: req });
-      res.header('Location', `${config.server.host}/login?redirect_uri=${redirectUri}`);
-      res.sendStatus(401);
-    }
-    return authenticated;
-  },
+const proxyOptions = (api) => ({
   proxyReqOptDecorator: (options, req) => {
     if (req.headers[xNavCallId]) {
       options.headers[xNavCallId] = req.headers[xNavCallId];
     } else {
       options.headers[xNavCallId] = ulid();
     }
-    options.headers[xTimestamp] = Date.now();
-    return new Promise(((resolve, reject) => authUtils.getOnBehalfOfAccessToken(
-      authClient, req, api.id, api.scopes
-    )
+    const requestTime = Date.now();
+    options.headers[xTimestamp] = requestTime;
+    return new Promise(((resolve, reject) => grantAzureOboToken(req.headers.authorization, api.scopes)
       .then((access_token) => {
+        logger.info(`Token veksling tok: (${Date.now() - requestTime}ms)`);
         options.headers['Authorization'] = `Bearer ${access_token}`;
         resolve(options);
       },
@@ -68,10 +57,10 @@ const proxyOptions = (api, authClient) => ({
 
 const stripTrailingSlash = (str) => (str.endsWith('/') ? str.slice(0, -1) : str);
 
-const setup = (router, authClient) => {
+const setup = (router) => {
   config.reverseProxyConfig.apis.forEach((api) => {
-    router.use(`${api.path}/*`, proxy(api.url, proxyOptions(api, authClient)));
+    router.use(`${api.path}/*`, proxy(api.url, proxyOptions(api)));
   });
 };
 
-export default { setup };
+export default { zxsetup };
