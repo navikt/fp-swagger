@@ -24,31 +24,6 @@ const server = {
     name: 'PORT',
     required: false,
   }) || 3000,
-
-  // optional, only set if requests to Azure AD must be performed through a corporate proxy (i.e. traffic to login.microsoftonline.com is blocked by the firewall)
-  proxy: envVar({
-    name: 'HTTP_PROXY',
-    required: false,
-  }),
-
-  // should be set to a random key of significant length for signing session ID cookies
-  sessionSignKey: envVar({
-    name: 'SESSION_SIGN_KEY',
-    required: true,
-  }),
-
-  sessionVerifyKey: envVar({
-    name: 'SESSION_VERIFY_KEY',
-    required: true,
-  }),
-
-  sessionInMemory: envVar({
-    name: 'SESSION_IN_MEMORY',
-    required: false,
-  }) || false,
-
-  // name of the cookie, set to whatever your want
-  cookieName: 'session-token',
 };
 
 const azureAd = {
@@ -66,48 +41,16 @@ const azureAd = {
     required: true,
   })),
 
-  // not provided by NAIS, must be configured
-  // where the user should be redirected after authenticating at the third party
-  // should be "$host + /oauth2/callback", e.g. http://localhost:3000/oauth2/callback
-  redirectUri: envVar({
-    name: 'AZURE_APP_REDIRECT_URL',
-    required: true,
-  }),
-
-  // not provided by NAIS, must be configured
-  // where your application should redirect the user after logout
-  logoutRedirectUri: envVar({
-    name: 'AZURE_APP_LOGOUT_REDIRECT_URL',
-    required: true,
-  }),
-
   // leave at default
   tokenEndpointAuthMethod: 'private_key_jwt',
-  responseTypes: ['code'],
-  responseMode: 'query',
   tokenEndpointAuthSigningAlg: 'RS256',
-};
-
-const redis = {
-  host: envVar({
-    name: 'REDIS_HOST',
-    required: false,
-  }),
-  port: envVar({
-    name: 'REDIS_PORT',
-    required: false,
-  }) || 6379,
-  password: envVar({
-    name: 'REDIS_PASSWORD',
-    required: false,
-  }),
 };
 
 const cors = {
   allowedHeaders: envVar({
     name: 'CORS_ALLOWED_HEADERS',
     required: false,
-  }) || 'x-correlation-id',
+  }) || 'x_Nav-CallId',
   exposedHeaders: envVar({
     name: 'CORS_EXPOSED_HEADERS',
     required: false,
@@ -115,7 +58,7 @@ const cors = {
   allowedMethods: envVar({
     name: 'CORS_ALLOWED_METHODS',
     required: false,
-  }) || 'x_Nav-CallId',
+  }) || '',
 }
 
 const getProxyConfig = () => {
@@ -153,9 +96,6 @@ const configValueAsJson = ({ name, secret = false, required = true }) => {
   }
 };
 
-const ENV_PREFIX = "env:"
-const PATH_PREFIX = "path:"
-const VALUE_PREFIX = "value:"
 
 const configValue = ({name, secret = false, required = true}) => {
   // Finner ut hvor vi skal lete etter config
@@ -169,16 +109,7 @@ const configValue = ({name, secret = false, required = true}) => {
   }
 
   // Setter configverdi
-  let value = null;
-  if (pointer.startsWith(ENV_PREFIX)) {
-    value = process.env[pointer.slice(ENV_PREFIX.length)];
-  } else if (pointer.startsWith(PATH_PREFIX)) {
-    value = fs.readFileSync(pointer.slice(PATH_PREFIX.length), 'utf-8');
-  } else if (pointer.startsWith(VALUE_PREFIX)) {
-    value = pointer.slice(VALUE_PREFIX.length);
-  } else {
-    value = pointer;
-  }
+  let value = pointer;
 
   // Validerer
   if (!value && required) {
@@ -208,6 +139,5 @@ export default {
   server,
   azureAd,
   reverseProxyConfig: getProxyConfig(),
-  redis,
   cors,
 };
