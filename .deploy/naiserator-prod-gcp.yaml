@@ -80,3 +80,5 @@ spec:
                        {"path":"/fpabonnent/api","url":"https://fpabonnent.prod-fss-pub.nais.io","scopes":"api://prod-fss.teamforeldrepenger.fpabonnent/swagger","name":"fp-abonnent"},
                        {"path":"/fpinfo/api","url":"https://fpinfo.prod-fss-pub.nais.io","scopes":"api://prod-fss.teamforeldrepenger.fpinfo/swagger","name":"fp-info"}
               ]}'
+    - name: CUSTOM_CSS
+      value: "'.swagger-ui .topbar { background-color: red; }'"

@@ -13,6 +13,7 @@ const setup = () => {
 
   const options = {
     explorer: true,
+    customCss: config.swagger.customCss,
     swaggerOptions: {
       "urls": swaggerUrls,
       "deepLinking": true,

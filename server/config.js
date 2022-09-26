@@ -61,6 +61,13 @@ const cors = {
   }) || '',
 }
 
+const swagger = {
+  customCss: envVar({
+    name: 'CUSTOM_CSS',
+    required: false,
+  }) || '',
+}
+
 const getProxyConfig = () => {
   var config = configValueAsJson({ name: 'PROXY_CONFIG' });
   if (!config.apis) {
@@ -140,4 +147,5 @@ export default {
   azureAd,
   reverseProxyConfig: getProxyConfig(),
   cors,
+  swagger,
 };
