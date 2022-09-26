@@ -36,11 +36,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
-      - name: Build
-        run: |
-          echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
-          yarn build
-
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b # Use commit-sha1 instead of tag for security concerns
         with:
