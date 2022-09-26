@@ -81,4 +81,4 @@ spec:
                        {"path":"/fpinfo/api","url":"https://fpinfo.prod-fss-pub.nais.io","scopes":"api://prod-fss.teamforeldrepenger.fpinfo/swagger","name":"fp-info"}
               ]}'
     - name: CUSTOM_CSS
-      value: ".swagger-ui .topbar { background-color: red; } .swagger-container { background:#F9D0C4; } { background-color:#F9D0C4; } .swagger-ui .scheme-container { background:#F9D0C4; }"
+      value: ".swagger-ui .topbar { background-color: red; } .swagger-container { background: #F9D0C4; } .swagger-ui .scheme-container { background: #F9D0C4; }"
