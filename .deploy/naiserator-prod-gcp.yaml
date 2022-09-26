@@ -6,7 +6,7 @@ metadata:
   labels:
     team: teamforeldrepenger
 spec:
-  image: ghcr.io/navikt/fp-swagger:0.21
+  image: {{image}}
   port: 8080
   ingresses:
     - "https://fpswagger.intern.nav.no"
