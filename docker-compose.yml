@@ -17,7 +17,7 @@ services:
       - NODE_ENV=development
       - PROXY_CONFIG={"apis":[{"path":"/fpsak/api","url":"http://192.168.5.2:8081","scopes":"fp-frontend/.default"}]}
       - PORT=9090
-      - REDIS_HOST=redis1
+      - REDIS_HOST=redis
       - SESSION_SIGN_KEY=dfasdf
       - SESSION_VERIFY_KEY=324234esdf3
       - SWAGGER_URLS=[{"url":"/fpoppdrag/api/openapi.json","name":"fpoppdrag"}]
@@ -28,8 +28,8 @@ services:
       timeout: 10s
       retries: 10
     links:
-      - redis1
-      - auth.server2
+      - redis
+      - auth.server
 
   redis:
     image: redis
