@@ -63,4 +63,4 @@ const setup = (router) => {
   });
 };
 
-export default { zxsetup };
+export default { setup };
