@@ -1,11 +1,11 @@
 FROM navikt/node-express:16
 
-USER root
-WORKDIR /app
+ENV TZ="Europe/Oslo"
+LABEL org.opencontainers.image.source=https://github.com/navikt/fp-frontend
 
-COPY server.js /app/
-ADD server /app/server
-COPY package.json /app/
+WORKDIR /app
+COPY --chown=apprunner:root server.js package.json ./
+COPY --chown=apprunner:root server ./server/
 RUN npm i
 
-EXPOSE 9090
+EXPOSE 8080

@@ -1,0 +1,84 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: fp-swagger
+  namespace: teamforeldrepenger
+  labels:
+    team: teamforeldrepenger
+spec:
+  image: ghcr.io/navikt/fp-swagger:0.21
+  port: 9090
+  ingresses:
+    - "https://fpswagger.dev.intern.nav.no"
+  liveness:
+    path: /isAlive
+    initialDelay: 5
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: /isReady
+    initialDelay: 5
+    timeout: 1
+  replicas:
+    min: 1
+    max: 1
+    cpuThresholdPercentage: 50
+  resources:
+    limits:
+      cpu: 500m
+      memory: 64Mi
+    requests:
+      cpu: 50m
+      memory: 32Mi
+  azure:
+    application:
+      enabled: true
+      claims:
+        extra:
+          - "NAVident"
+          - "azp_name"
+        groups:
+          - id: "f1b82579-c5b5-4617-9673-8ace5ff67f63" # drift
+      singlePageApplication: true
+    sidecar:
+      enabled: true
+      autoLogin: true
+  accessPolicy:
+    outbound:
+      external:
+        - host: fpsak-api.dev-fss-pub.nais.io
+        - host: fplos.dev-fss-pub.nais.io
+        - host: fpformidling.dev-fss-pub.nais.io
+        - host: fpoppdrag.dev-fss-pub.nais.io
+        - host: fptilbake.dev-fss-pub.nais.io
+        - host: fpabakus.dev-fss-pub.nais.io
+        - host: fpfordel.dev-fss-pub.nais.io
+        - host: fprisk.dev-fss-pub.nais.io
+        - host: fpabonnent.dev-fss-pub.nais.io
+        - host: fpinfo.dev-fss-pub.nais.io
+  env:
+    - name: HOST
+      value: "https://fpswagger.dev.intern.nav.no"
+    - name: PORT
+      value: "8080"
+    - name: CORS_ALLOWED_HEADERS
+      value: "Referer, Origin, Content-Type, Accept, X-Requested-With, cache-control, x_Nav-CallId, pragma, expires"
+    - name: CORS_EXPOSED_HEADERS
+      value: "Location"
+    - name: CORS_ALLOWED_METHODS
+      value: "GET, POST, OPTIONS"
+    - name: PROXY_CONFIG
+      value: '{"apis":[{"path":"/fpsak/api","url":"https://fpsak-api.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpsak/swagger","name":"fp-sak"},
+                       {"path":"/fpabakus/api","url":"https://fpabakus.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpabakus/swagger","name":"fp-fpabakus"},
+                       {"path":"/fptilbake/api","url":"https://fptilbake.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fptilbake/swagger","name":"fp-tilbake"},
+                       {"path":"/fpfordel/api","url":"https://fpfordel.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpfordel/swagger","name":"fp-fordel"},
+                       {"path":"/fpformidling/api","url":"https://fpformidling.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpformidling/swagger","name":"fp-formidling"},
+                       {"path":"/fplos/api","url":"https://fplos.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fplos/swagger","name":"fp-los"},
+                       {"path":"/fprisk/api","url":"https://fprisk.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fprisk/swagger","name":"fp-risk"},
+                       {"path":"/fpoppdrag/api","url":"https://fpoppdrag.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpoppdrag/swagger","name":"fp-oppdrag"},
+                       {"path":"/fpabonnent/api","url":"https://fpabonnent.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpabonnent/swagger","name":"fp-abonnent"},
+                       {"path":"/fpinfo/api","url":"https://fpinfo.dev-fss-pub.nais.io","scopes":"api://dev-fss.teamforeldrepenger.fpinfo/swagger","name":"fp-info"}
+              ]}'
+
+

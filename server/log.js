@@ -1,9 +1,8 @@
 import winston from 'winston';
 import morgan from 'morgan';
-import morganJson from 'morgan-json';
 
 const { format } = winston;
-const { combine, json, timestamp, colorize } = format;
+const { combine, json, timestamp} = format;
 
 const levels = {
   error: 0,
@@ -14,8 +13,7 @@ const levels = {
 }
 
 const level = () => {
-  const env = process.env.NODE_ENV || 'development';
-  const isDevelopment = env === 'development';
+  const isDevelopment = process.env.NODE_ENV === 'development';
   return isDevelopment ? 'debug' : 'info';
 }
 
@@ -30,13 +28,13 @@ const colors = {
 winston.addColors(colors)
 
 const stdoutLogger = winston.createLogger({
-    level: level(),
-    levels,
-    transports: [
-        new winston.transports.Console({
-            format: combine(timestamp(), json()),
-        }),
-    ],
+  level: level(),
+  levels,
+  transports: [
+    new winston.transports.Console({
+      format: combine(timestamp(), json()),
+    }),
+  ],
 });
 
 const debug = (msg) => {
@@ -65,22 +63,14 @@ const stream = {
 };
 
 const skip = () => {
-  const env = process.env.NODE_ENV || "development";
-  return env !== "development";
+  return process.env.NODE_ENV === "production";
 };
 
-const formatJson = morganJson({
-  short: ':method :url :status',
-  length: ':res[content-length]',
-  'response-time': ':response-time ms'
-});
-
-const vanligFormat = ":remote-addr :method :url :status :res[content-length] - :response-time ms";
+const vanligFormat = ":method :url :status :res[content-length] - :response-time ms";
 
 const morganMiddleware = morgan(
   vanligFormat, { stream, skip }
 );
-
 
 export default {
   debug,
