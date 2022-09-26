@@ -1,7 +1,7 @@
 FROM navikt/node-express:16
 
 ENV TZ="Europe/Oslo"
-LABEL org.opencontainers.image.source=https://github.com/navikt/fp-frontend
+LABEL org.opencontainers.image.source=https://github.com/navikt/fp-swagger
 
 WORKDIR /app
 COPY --chown=apprunner:root server.js package.json ./
