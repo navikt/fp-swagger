@@ -20,7 +20,3 @@ jobs:
         run: yarn install --ignore-optional --no-progress --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Typescript and linting
-        run: yarn less:lint && yarn lint && yarn ts-check
-
