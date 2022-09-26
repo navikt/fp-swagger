@@ -34,7 +34,7 @@ jobs:
       - name: Run yarn install
         run: yarn install --ignore-optional --no-progress --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@49ed152c8eca782a232dede0303416e8f356c37b # Use commit-sha1 instead of tag for security concerns
