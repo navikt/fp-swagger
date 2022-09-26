@@ -82,7 +82,7 @@ jobs:
         if: success()
         uses: actions/github-script@v6
         with:
-          github-token: ${{secrets.GH_P_TOKEN}}
+          github-token: ${{secrets.GH_ACCESS_TOKEN}}
           script: |
               github.rest.issues.create( {
                 owner: context.issue.owner,
@@ -96,5 +96,5 @@ jobs:
                       issue_number: response.data.number }
                      github.rest.issues.createComment({...issue,
                             title: 'Deploy av ${{ env.TAG }}',
-                            body: '/promote dev-fss'})
+                            body: '/promote dev-gcp'})
                });
