@@ -58,6 +58,8 @@ spec:
         - host: fpabonnent.prod-fss-pub.nais.io
         - host: fpinfo.prod-fss-pub.nais.io
   env:
+    - name: NODE_ENV
+      value: "production"
     - name: HOST
       value: "https://fpswagger.intern.nav.no"
     - name: PORT

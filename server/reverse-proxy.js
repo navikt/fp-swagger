@@ -19,6 +19,7 @@ const proxyOptions = (api) => ({
     }
     const requestTime = Date.now();
     options.headers[xTimestamp] = requestTime;
+    options.headers['cookie'] = '';
     return new Promise(((resolve, reject) => grantAzureOboToken(req.headers.authorization, api.scopes)
       .then((access_token) => {
         logger.info(`Token veksling tok: (${Date.now() - requestTime}ms)`);
@@ -57,9 +58,17 @@ const proxyOptions = (api) => ({
 
 const stripTrailingSlash = (str) => (str.endsWith('/') ? str.slice(0, -1) : str);
 
+const timedOut = function (req, res, next) {
+  if (!req.timedout) {
+    next()
+  } else {
+    logger.warning('Request for ' + req.originalUrl + ' timed out!')
+  }
+}
+
 const setup = (router) => {
   config.reverseProxyConfig.apis.forEach((api) => {
-    router.use(`${api.path}/*`, proxy(api.url, proxyOptions(api)));
+    router.use(`${api.path}/*`, timedOut, proxy(api.url, proxyOptions(api)));
   });
 };
 
