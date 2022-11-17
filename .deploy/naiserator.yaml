@@ -1,0 +1,75 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: fp-swagger
+  namespace: teamforeldrepenger
+  labels:
+    team: teamforeldrepenger
+spec:
+  image: {{image}}
+  port: 8080
+  ingresses:
+    - {{ingress}}
+  liveness:
+    path: /isAlive
+    initialDelay: 10
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 10
+  readiness:
+    path: /isReady
+    initialDelay: 10
+    timeout: 1
+  replicas:
+    min: {{minReplicas}}
+    max: {{maxReplicas}}
+    cpuThresholdPercentage: 50
+  resources:
+    limits:
+      cpu: 500m
+      memory: 64Mi
+    requests:
+      cpu: 50m
+      memory: 32Mi
+  azure:
+    application:
+      enabled: true
+      claims:
+        extra:
+          - "NAVident"
+          - "azp_name"
+        groups:
+          {{#each groups as |group|}}
+          - id: "{{group}}"
+          {{/each}}
+      singlePageApplication: true
+    sidecar:
+      enabled: true
+      autoLogin: true
+  accessPolicy:
+    outbound:
+      external:
+        {{#each externals as |external|}}
+        - host: "{{external}}"
+        {{/each}}
+  env:
+    - name: HOST
+      value: {{ingress}}
+    - name: PORT
+      value: "8080"
+    - name: CORS_ALLOWED_HEADERS
+      value: "Referer, Origin, Content-Type, Accept, X-Requested-With, cache-control, x_Nav-CallId, pragma, expires"
+    - name: CORS_EXPOSED_HEADERS
+      value: "Location"
+    - name: CORS_ALLOWED_METHODS
+      value: "GET, POST"
+    - name: PROXY_CONFIG
+      value: '{"apis":[
+              {{#each proxyRedirects}}
+                {"path":"{{path}}", "url":"{{url}}", "scopes":"{{scope}}, "name": "{{name}}"}{{#unless @last}},{{/unless}}
+              {{/each}}
+              ]}'
+    - name: NODE_ENV
+      value: "{{env}}"
+    - name: CUSTOM_CSS
+      value: "{{customCss}}"
