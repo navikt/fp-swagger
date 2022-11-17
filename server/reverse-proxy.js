@@ -9,6 +9,7 @@ import logger from './log.js';
 
 const xNavCallId = 'x_Nav-CallId';
 const xTimestamp = 'x-Timestamp';
+const stripTrailingSlash = (str) => (str.endsWith('/') ? str.slice(0, -1) : str);
 
 const proxyOptions = (api) => ({
   proxyReqOptDecorator: (options, req) => {
@@ -56,7 +57,6 @@ const proxyOptions = (api) => ({
   },
 });
 
-const stripTrailingSlash = (str) => (str.endsWith('/') ? str.slice(0, -1) : str);
 
 const timedOut = function (req, res, next) {
   if (!req.timedout) {

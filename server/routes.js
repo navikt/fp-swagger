@@ -18,8 +18,8 @@ const setup = () => {
       "urls": swaggerUrls,
       "deepLinking": true,
       "layout": "StandaloneLayout"
-    }
-  }
+    },
+  };
   // set up swagger services and routes
   router.use('/', swaggerUi.serve);
   router.get('/', swaggerUi.setup(null, options));
