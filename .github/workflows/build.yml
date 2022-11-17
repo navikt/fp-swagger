@@ -15,6 +15,7 @@ on:
 
 jobs:
   build-app:
+    name: Build and test
     runs-on: ubuntu-latest
     outputs:
       build-version: ${{ steps.generate-build-version.outputs.build-version }}
