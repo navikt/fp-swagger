@@ -66,7 +66,7 @@ spec:
     - name: PROXY_CONFIG
       value: '{"apis":[
               {{#each proxyRedirects}}
-                {"path":"{{path}}", "url":"{{url}}", "scopes":"{{scope}}, "name": "{{name}}"}{{#unless @last}},{{/unless}}
+                {"path":"{{path}}", "url":"{{url}}", "scopes":"{{scope}}", "name": "{{name}}"}{{#unless @last}},{{/unless}}
               {{/each}}
               ]}'
     - name: NODE_ENV
