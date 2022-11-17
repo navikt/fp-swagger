@@ -59,15 +59,16 @@ const cors = {
     name: 'CORS_ALLOWED_METHODS',
     required: false,
   }) || '',
-}
+};
 
 const swagger = {
   customCss: envVar({
     name: 'CUSTOM_CSS',
     required: false,
   }) || '',
-}
+};
 
+// eslint-disable-next-line consistent-return
 const configValueAsJson = ({ name, required = true }) => {
   const value = envVar({ name, required });
   if (!value) { return null; }
@@ -77,10 +78,10 @@ const configValueAsJson = ({ name, required = true }) => {
     logger.error(`Config: '${name}' er ikke et gyldig JSON-objekt.`, error);
     process.exit(1);
   }
-}
+};
 
 const getProxyConfig = () => {
-  var config = configValueAsJson({ name: 'PROXY_CONFIG' });
+  const config = configValueAsJson({ name: 'PROXY_CONFIG' });
   if (!config.apis) {
     logger.error("Config: 'PROXY_CONFIG' mangler 'apis' entry.");
     exit(1);
