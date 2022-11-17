@@ -1,0 +1,90 @@
+{
+  "ingress": "https://fpswagger.dev.intern.nav.no",
+  "minReplicas": "1",
+  "maxReplicas": "1",
+  "env": "development",
+  "groups": [
+    "f1b82579-c5b5-4617-9673-8ace5ff67f63"
+  ],
+  "externals": [
+    "fpsak-api.dev-fss-pub.nais.io",
+    "fptilbake.dev-fss-pub.nais.io",
+    "fpoppdrag.dev-fss-pub.nais.io",
+    "fpformidling.dev-fss-pub.nais.io",
+    "fplos.dev-fss-pub.nais.io",
+    "fpfordel.dev-fss-pub.nais.io",
+    "fpabakus.dev-fss-pub.nais.io",
+    "fprisk.dev-fss-pub.nais.io",
+    "fpabonnent.dev-fss-pub.nais.io",
+    "fpinfo.dev-fss-pub.nais.io"
+  ],
+  "customCss": "",
+  "proxyRedirects": [
+    {
+      "path": "/fpsak/api",
+      "url": "https://fpsak-api.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
+      "name": "fp-sak"
+    },
+    {
+      "path": "/fptilbake/api",
+      "url": "https://fptilbake.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fptilbake/swagger",
+      "name": "fp-tilbake"
+    },
+    {
+      "path": "/fpoppdrag/api",
+      "url": "https://fpoppdrag.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpoppdrag/swagger",
+      "name": "fp-oppdrag"
+    },
+    {
+      "path": "/fpformidling/api",
+      "url": "https://fpformidling.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpformidling/swagger",
+      "name": "fp-formidling"
+    },
+    {
+      "path": "/fplos/api",
+      "url": "https://fplos.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fplos/swagger",
+      "name": "fp-los"
+    },
+    {
+      "path": "/fpfordel/api",
+      "url": "https://fpfordel.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpfordel/swagger",
+      "name": "fp-fordel"
+    },
+    {
+      "path": "/fpabakus/api",
+      "url": "https://fpabakus.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpabakus/swagger",
+      "name": "fp-abakus"
+    },
+    {
+      "path": "/fprisk/api",
+      "url": "https://fprisk.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fprisk/swagger",
+      "name": "fp-risk"
+    },
+    {
+      "path": "/fpabonnent/api",
+      "url": "https://fpabonnent.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpabonnent/swagger",
+      "name": "fp-abonnent"
+    },
+    {
+      "path": "/fpinfo/api",
+      "url": "https://fpinfo.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpinfo/swagger",
+      "name": "fp-info"
+    },
+    {
+      "path": "/fpsak/ekstern/api",
+      "url": "https://fpsak-api.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
+      "name": "fp-sak ekstern API"
+    }
+  ]
+}
