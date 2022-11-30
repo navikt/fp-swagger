@@ -3,6 +3,7 @@
   "minReplicas": "1",
   "maxReplicas": "1",
   "env": "development",
+  "allowAllUsers": true,
   "groups": [
     "f1b82579-c5b5-4617-9673-8ace5ff67f63"
   ],
@@ -91,6 +92,12 @@
       "url": "https://fpfordel.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpfordel/swagger",
       "name": "fp-fordel ekstern API"
+    },
+    {
+      "path": "/fpabakus/ekstern/api",
+      "url": "https://fpabakus.dev-fss-pub.nais.io",
+      "scope": "api://dev-fss.teamforeldrepenger.fpabakus/swagger",
+      "name": "fp-abakus ekstern API"
     }
   ]
 }
