@@ -3,6 +3,7 @@
   "minReplicas": "1",
   "maxReplicas": "2",
   "env": "production",
+  "allowAllUsers": false,
   "groups": [
     "0d226374-4748-4367-a38a-062dcad70034"
   ],
@@ -91,6 +92,12 @@
       "url": "https://fpfordel.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fpfordel/swagger",
       "name": "fp-fordel ekstern API"
+    },
+    {
+      "path": "/fpabakus/ekstern/api",
+      "url": "https://fpabakus.prod-fss-pub.nais.io",
+      "scope": "api://prod-fss.teamforeldrepenger.fpabakus/swagger",
+      "name": "fp-abakus ekstern API"
     }
   ]
 }
