@@ -1577,9 +1577,9 @@ one-time@^1.0.0:
   dependencies:
     fn.name "1.x.x"
 
-openid-client@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-5.3.0.tgz#e0fa433bb7a156b09d8cbb100abe95b322aa42be"
+openid-client@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/openid-client/-/openid-client-5.3.1.tgz#69a5fa7d2b5ad479032f576852d40b4d4435488a"
   dependencies:
     jose "^4.10.0"
     lru-cache "^6.0.0"
