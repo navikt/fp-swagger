@@ -88,12 +88,6 @@
       "name": "fp-sak ekstern API"
     },
     {
-      "path": "/fpfordel/ekstern/api",
-      "url": "https://fpfordel.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpfordel/swagger",
-      "name": "fp-fordel ekstern API"
-    },
-    {
       "path": "/fpabakus/ekstern/api",
       "url": "https://fpabakus.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fpabakus/swagger",
