@@ -5,7 +5,8 @@
   "env": "production",
   "allowAllUsers": false,
   "groups": [
-    "0d226374-4748-4367-a38a-062dcad70034"
+    "0d226374-4748-4367-a38a-062dcad70034",
+    "04b22158-354a-483f-a836-cf19b17ba5c3"
   ],
   "externals": [
     "fpsak-api.prod-fss-pub.nais.io",
