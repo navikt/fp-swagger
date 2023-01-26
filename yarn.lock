@@ -22,9 +22,9 @@
   version "1.1.0"
   resolved "https://registry.npmjs.org/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz"
 
-"@npmcli/arborist@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.1.6.tgz#4a92a8fe2e6a00f916581a1d127043eefb6405e6"
+"@npmcli/arborist@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.0.tgz#37698594170d3f3d6848b9a8f714abdadf7a4d37"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
     "@npmcli/fs" "^3.1.0"
@@ -1040,11 +1040,11 @@ libnpmaccess@^7.0.1:
     npm-package-arg "^10.1.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmdiff@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.7.tgz#c3c32c0f0cd00f88339676a5073f9fc8207cd4c3"
+libnpmdiff@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.8.tgz#b169fe6c894affd6edab21a0fd3eda80201ac0f0"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.0"
     "@npmcli/disparity-colors" "^3.0.0"
     "@npmcli/installed-package-contents" "^2.0.0"
     binary-extensions "^2.2.0"
@@ -1054,11 +1054,11 @@ libnpmdiff@^5.0.7:
     pacote "^15.0.7"
     tar "^6.1.13"
 
-libnpmexec@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.7.tgz#68e84f9fded99f8ee3e23de403f5f575ac330f7b"
+libnpmexec@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.8.tgz#b2033f5d645c020a04eed90b3bb4c3915ea6bf82"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.0"
     "@npmcli/run-script" "^6.0.0"
     chalk "^4.1.0"
     ci-info "^3.7.0"
@@ -1071,11 +1071,11 @@ libnpmexec@^5.0.7:
     semver "^7.3.7"
     walk-up-path "^1.0.0"
 
-libnpmfund@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.7.tgz#f6bcaf8ef8128ca36e80f8c447d2a0c585ee9096"
+libnpmfund@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.8.tgz#86df3936dbb350ba25bfc36ae65cc9cd87a0cfbd"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.0"
 
 libnpmhook@^9.0.1:
   version "9.0.1"
@@ -1091,11 +1091,11 @@ libnpmorg@^5.0.1:
     aproba "^2.0.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmpack@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.7.tgz#178731aee19feef3b28d973e53ff6d04b37c3cee"
+libnpmpack@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.8.tgz#f41d1205aebf823bf4f996fb9259658f617bad05"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.0"
     "@npmcli/run-script" "^6.0.0"
     npm-package-arg "^10.1.0"
     pacote "^15.0.7"
@@ -1448,12 +1448,12 @@ npm-user-validate@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/npm-user-validate/-/npm-user-validate-1.0.1.tgz"
 
-npm@^9.3.1:
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-9.3.1.tgz#3d7499a1f7b867055dee3177ed6baa5cda8528a8"
+npm@^9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-9.4.0.tgz#6e92558bed18063189dac5b5cd239dd2dca931a4"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.0"
     "@npmcli/config" "^6.1.1"
     "@npmcli/map-workspaces" "^3.0.0"
     "@npmcli/package-json" "^3.0.0"
@@ -1476,12 +1476,12 @@ npm@^9.3.1:
     is-cidr "^4.0.2"
     json-parse-even-better-errors "^3.0.0"
     libnpmaccess "^7.0.1"
-    libnpmdiff "^5.0.7"
-    libnpmexec "^5.0.7"
-    libnpmfund "^4.0.7"
+    libnpmdiff "^5.0.8"
+    libnpmexec "^5.0.8"
+    libnpmfund "^4.0.8"
     libnpmhook "^9.0.1"
     libnpmorg "^5.0.1"
-    libnpmpack "^5.0.7"
+    libnpmpack "^5.0.8"
     libnpmpublish "^7.0.6"
     libnpmsearch "^6.0.1"
     libnpmteam "^5.0.1"
