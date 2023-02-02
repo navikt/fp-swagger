@@ -22,9 +22,9 @@
   version "1.1.0"
   resolved "https://registry.npmjs.org/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz"
 
-"@npmcli/arborist@^6.1.6":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.1.6.tgz#4a92a8fe2e6a00f916581a1d127043eefb6405e6"
+"@npmcli/arborist@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.1.tgz#caaa29eff7fb369653ccf1ddb1bca1b279c7debb"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
     "@npmcli/fs" "^3.1.0"
@@ -60,9 +60,9 @@
     treeverse "^3.0.0"
     walk-up-path "^1.0.0"
 
-"@npmcli/config@^6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@npmcli/config/-/config-6.1.1.tgz#d65bd3974dd4bef66a1ce11024cb7bb461a022f8"
+"@npmcli/config@^6.1.2":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@npmcli/config/-/config-6.1.2.tgz#8e5f280088d391e60ad1716c3f69fc8f56cbbf9c"
   dependencies:
     "@npmcli/map-workspaces" "^3.0.0"
     ini "^3.0.0"
@@ -1040,11 +1040,11 @@ libnpmaccess@^7.0.1:
     npm-package-arg "^10.1.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmdiff@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.7.tgz#c3c32c0f0cd00f88339676a5073f9fc8207cd4c3"
+libnpmdiff@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.9.tgz#d4446e34bda46aecf4e85c128a39591575ad0173"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.1"
     "@npmcli/disparity-colors" "^3.0.0"
     "@npmcli/installed-package-contents" "^2.0.0"
     binary-extensions "^2.2.0"
@@ -1054,11 +1054,11 @@ libnpmdiff@^5.0.7:
     pacote "^15.0.7"
     tar "^6.1.13"
 
-libnpmexec@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.7.tgz#68e84f9fded99f8ee3e23de403f5f575ac330f7b"
+libnpmexec@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.9.tgz#c92630c449d810238c0b21a9fad6638d3697a968"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.1"
     "@npmcli/run-script" "^6.0.0"
     chalk "^4.1.0"
     ci-info "^3.7.0"
@@ -1071,11 +1071,11 @@ libnpmexec@^5.0.7:
     semver "^7.3.7"
     walk-up-path "^1.0.0"
 
-libnpmfund@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.7.tgz#f6bcaf8ef8128ca36e80f8c447d2a0c585ee9096"
+libnpmfund@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.9.tgz#d0f3aa84fcfd65f73c8153a6c65548171d63128d"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.1"
 
 libnpmhook@^9.0.1:
   version "9.0.1"
@@ -1091,11 +1091,11 @@ libnpmorg@^5.0.1:
     aproba "^2.0.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmpack@^5.0.7:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.7.tgz#178731aee19feef3b28d973e53ff6d04b37c3cee"
+libnpmpack@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.9.tgz#cf84663ea8523416d1a156b4696c684c91dbde6f"
   dependencies:
-    "@npmcli/arborist" "^6.1.6"
+    "@npmcli/arborist" "^6.2.1"
     "@npmcli/run-script" "^6.0.0"
     npm-package-arg "^10.1.0"
     pacote "^15.0.7"
@@ -1448,13 +1448,13 @@ npm-user-validate@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/npm-user-validate/-/npm-user-validate-1.0.1.tgz"
 
-npm@^9.3.1:
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-9.3.1.tgz#3d7499a1f7b867055dee3177ed6baa5cda8528a8"
+npm@^9.4.1:
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-9.4.1.tgz#75897a0a891b017cd9a317527aa388ffccac8721"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
-    "@npmcli/arborist" "^6.1.6"
-    "@npmcli/config" "^6.1.1"
+    "@npmcli/arborist" "^6.2.1"
+    "@npmcli/config" "^6.1.2"
     "@npmcli/map-workspaces" "^3.0.0"
     "@npmcli/package-json" "^3.0.0"
     "@npmcli/run-script" "^6.0.0"
@@ -1476,12 +1476,12 @@ npm@^9.3.1:
     is-cidr "^4.0.2"
     json-parse-even-better-errors "^3.0.0"
     libnpmaccess "^7.0.1"
-    libnpmdiff "^5.0.7"
-    libnpmexec "^5.0.7"
-    libnpmfund "^4.0.7"
+    libnpmdiff "^5.0.9"
+    libnpmexec "^5.0.9"
+    libnpmfund "^4.0.9"
     libnpmhook "^9.0.1"
     libnpmorg "^5.0.1"
-    libnpmpack "^5.0.7"
+    libnpmpack "^5.0.9"
     libnpmpublish "^7.0.6"
     libnpmsearch "^6.0.1"
     libnpmteam "^5.0.1"
