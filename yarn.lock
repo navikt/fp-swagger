@@ -1005,9 +1005,9 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
 
-jose@^4.10.0, jose@^4.11.2:
-  version "4.11.2"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-4.11.2.tgz#d9699307c02e18ff56825843ba90e2fae9f09e23"
+jose@^4.10.0, jose@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-4.13.0.tgz#bee9096c666301641d360577572a3834c3842dfc"
 
 json-parse-even-better-errors@^3.0.0:
   version "3.0.0"
