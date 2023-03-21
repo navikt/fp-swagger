@@ -1,5 +1,5 @@
 {
-  "ingress": "https://fpswagger.intern.nav.no",
+  "ingresses": [ "https://fpswagger.intern.nav.no" ],
   "minReplicas": "1",
   "maxReplicas": "2",
   "env": "production",
