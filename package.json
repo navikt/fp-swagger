@@ -18,7 +18,7 @@
     "jose": "^4.13.1",
     "morgan": "^1.9.1",
     "node-cache": "^5.1.2",
-    "npm": "^9.6.2",
+    "npm": "^9.6.3",
     "openid-client": "^5.4.0",
     "swagger-ui-express": "^4.6.2",
     "ulid": "^2.3.0",

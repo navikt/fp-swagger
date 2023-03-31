@@ -22,9 +22,9 @@
   version "1.1.0"
   resolved "https://registry.npmjs.org/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz"
 
-"@npmcli/arborist@^6.2.5":
-  version "6.2.5"
-  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.5.tgz#b35c6ec42feeb7b44d6a6fcd2ea323e35b256d80"
+"@npmcli/arborist@^6.2.6":
+  version "6.2.6"
+  resolved "https://registry.yarnpkg.com/@npmcli/arborist/-/arborist-6.2.6.tgz#3b5d4cc9517c26252d3dd01bbd940ced93aec1bd"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
     "@npmcli/fs" "^3.1.0"
@@ -42,7 +42,7 @@
     hosted-git-info "^6.1.1"
     json-parse-even-better-errors "^3.0.0"
     json-stringify-nice "^1.1.4"
-    minimatch "^6.1.6"
+    minimatch "^7.4.2"
     nopt "^7.0.0"
     npm-install-checks "^6.0.0"
     npm-package-arg "^10.1.0"
@@ -60,9 +60,9 @@
     treeverse "^3.0.0"
     walk-up-path "^1.0.0"
 
-"@npmcli/config@^6.1.4":
-  version "6.1.4"
-  resolved "https://registry.yarnpkg.com/@npmcli/config/-/config-6.1.4.tgz#b7751d6629892b0e1bd33b2f377e66a5ea1f7765"
+"@npmcli/config@^6.1.5":
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/@npmcli/config/-/config-6.1.5.tgz#79f6e84dbe13f0ad14133898cb4cb904cab7097a"
   dependencies:
     "@npmcli/map-workspaces" "^3.0.2"
     ini "^3.0.0"
@@ -119,13 +119,13 @@
     npm-bundled "^3.0.0"
     npm-normalize-package-bin "^3.0.0"
 
-"@npmcli/map-workspaces@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@npmcli/map-workspaces/-/map-workspaces-3.0.2.tgz#aa3f9ebccb213073d6d6bf743047272108c29f06"
+"@npmcli/map-workspaces@^3.0.2", "@npmcli/map-workspaces@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@npmcli/map-workspaces/-/map-workspaces-3.0.3.tgz#476944b63cd1f65bf83c6fdc7f4ca7be56906b1f"
   dependencies:
     "@npmcli/name-from-folder" "^2.0.0"
-    glob "^8.0.1"
-    minimatch "^6.1.6"
+    glob "^9.3.1"
+    minimatch "^7.4.2"
     read-package-json-fast "^3.0.0"
 
 "@npmcli/metavuln-calculator@^5.0.0":
@@ -402,13 +402,13 @@ cacache@^16.1.0:
     tar "^6.1.11"
     unique-filename "^2.0.0"
 
-cacache@^17.0.0, cacache@^17.0.4:
-  version "17.0.4"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-17.0.4.tgz#5023ed892ba8843e3b7361c26d0ada37e146290c"
+cacache@^17.0.0, cacache@^17.0.4, cacache@^17.0.5:
+  version "17.0.5"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-17.0.5.tgz#6dbec26c11f1f6a2b558bc11ed3316577c339ebc"
   dependencies:
     "@npmcli/fs" "^3.1.0"
     fs-minipass "^3.0.0"
-    glob "^8.0.1"
+    glob "^9.3.1"
     lru-cache "^7.7.1"
     minipass "^4.0.0"
     minipass-collect "^1.0.2"
@@ -846,7 +846,7 @@ glob@^7.1.3, glob@^7.1.4:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^8.0.1, glob@^8.1.0:
+glob@^8.0.1:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/glob/-/glob-8.1.0.tgz#d388f656593ef708ee3e34640fdfb99a9fd1c33e"
   dependencies:
@@ -856,9 +856,18 @@ glob@^8.0.1, glob@^8.1.0:
     minimatch "^5.0.1"
     once "^1.3.0"
 
-graceful-fs@^4.2.10, graceful-fs@^4.2.6:
-  version "4.2.10"
-  resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz"
+glob@^9.3.0, glob@^9.3.1:
+  version "9.3.2"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-9.3.2.tgz#8528522e003819e63d11c979b30896e0eaf52eda"
+  dependencies:
+    fs.realpath "^1.0.0"
+    minimatch "^7.4.1"
+    minipass "^4.2.4"
+    path-scurry "^1.6.1"
+
+graceful-fs@^4.2.11, graceful-fs@^4.2.6:
+  version "4.2.11"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
 
 has-flag@^4.0.0:
   version "4.0.0"
@@ -1069,9 +1078,9 @@ just-diff-apply@^5.2.0:
   version "5.4.1"
   resolved "https://registry.npmjs.org/just-diff-apply/-/just-diff-apply-5.4.1.tgz"
 
-just-diff@^5.0.1:
-  version "5.1.1"
-  resolved "https://registry.npmjs.org/just-diff/-/just-diff-5.1.1.tgz"
+just-diff@^6.0.0:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-6.0.2.tgz#03b65908543ac0521caf6d8eb85035f7d27ea285"
 
 kuler@^2.0.0:
   version "2.0.0"
@@ -1084,25 +1093,25 @@ libnpmaccess@^7.0.2:
     npm-package-arg "^10.1.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmdiff@^5.0.13:
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.13.tgz#833712814f9e7f8fb0463660b46ab52e0d040a02"
+libnpmdiff@^5.0.14:
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/libnpmdiff/-/libnpmdiff-5.0.14.tgz#162c2a12d0940b023eed09356ccd23cf97daec5f"
   dependencies:
-    "@npmcli/arborist" "^6.2.5"
+    "@npmcli/arborist" "^6.2.6"
     "@npmcli/disparity-colors" "^3.0.0"
     "@npmcli/installed-package-contents" "^2.0.2"
     binary-extensions "^2.2.0"
     diff "^5.1.0"
-    minimatch "^6.1.6"
+    minimatch "^7.4.2"
     npm-package-arg "^10.1.0"
     pacote "^15.0.8"
     tar "^6.1.13"
 
-libnpmexec@^5.0.13:
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.13.tgz#3e2e1cdf48d441d6dbbd8ff46a41dde9939fe8e2"
+libnpmexec@^5.0.14:
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/libnpmexec/-/libnpmexec-5.0.14.tgz#005286e36dea59b4760a25d9c46f36961123b57a"
   dependencies:
-    "@npmcli/arborist" "^6.2.5"
+    "@npmcli/arborist" "^6.2.6"
     "@npmcli/run-script" "^6.0.0"
     chalk "^4.1.0"
     ci-info "^3.7.1"
@@ -1115,11 +1124,11 @@ libnpmexec@^5.0.13:
     semver "^7.3.7"
     walk-up-path "^1.0.0"
 
-libnpmfund@^4.0.13:
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.13.tgz#6f1b2e24e8b3b53e463c007aa1e2280d79f02a99"
+libnpmfund@^4.0.14:
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/libnpmfund/-/libnpmfund-4.0.14.tgz#65c335210b0ae7ef354fd72a00f5ab0fed8a4d76"
   dependencies:
-    "@npmcli/arborist" "^6.2.5"
+    "@npmcli/arborist" "^6.2.6"
 
 libnpmhook@^9.0.3:
   version "9.0.3"
@@ -1135,18 +1144,18 @@ libnpmorg@^5.0.3:
     aproba "^2.0.0"
     npm-registry-fetch "^14.0.3"
 
-libnpmpack@^5.0.13:
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.13.tgz#3a28d106272018f772819329b074b6aa51a4c00f"
+libnpmpack@^5.0.14:
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/libnpmpack/-/libnpmpack-5.0.14.tgz#a0bd93cc5d8c80a4c4c6cab8c19902aa3ce2153b"
   dependencies:
-    "@npmcli/arborist" "^6.2.5"
+    "@npmcli/arborist" "^6.2.6"
     "@npmcli/run-script" "^6.0.0"
     npm-package-arg "^10.1.0"
     pacote "^15.0.8"
 
-libnpmpublish@^7.1.2:
-  version "7.1.2"
-  resolved "https://registry.yarnpkg.com/libnpmpublish/-/libnpmpublish-7.1.2.tgz#9a82a3a3df641378fcf5370f2f2d456a15d9fb4b"
+libnpmpublish@^7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/libnpmpublish/-/libnpmpublish-7.1.3.tgz#98e1b0a41cc8addfb7a8aee241e57e0034b877c4"
   dependencies:
     ci-info "^3.6.1"
     normalize-package-data "^5.0.0"
@@ -1195,6 +1204,10 @@ lru-cache@^6.0.0:
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-6.0.0.tgz"
   dependencies:
     yallist "^4.0.0"
+
+lru-cache@^7.14.1:
+  version "7.18.3"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.18.3.tgz#f793896e0fd0e954a59dfdd82f0773808df6aa89"
 
 lru-cache@^7.4.4, lru-cache@^7.5.1, lru-cache@^7.7.1:
   version "7.14.0"
@@ -1279,9 +1292,15 @@ minimatch@^5.0.1:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimatch@^6.1.0, minimatch@^6.1.6, minimatch@^6.2.0:
+minimatch@^6.1.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-6.2.0.tgz#2b70fd13294178c69c04dfc05aebdb97a4e79e42"
+  dependencies:
+    brace-expansion "^2.0.1"
+
+minimatch@^7.4.1, minimatch@^7.4.2, minimatch@^7.4.3:
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-7.4.3.tgz#012cbf110a65134bb354ae9773b55256cdb045a2"
   dependencies:
     brace-expansion "^2.0.1"
 
@@ -1342,7 +1361,7 @@ minipass@^3.0.0, minipass@^3.1.1, minipass@^3.1.6:
   dependencies:
     yallist "^4.0.0"
 
-minipass@^4.0.0, minipass@^4.2.4:
+minipass@^4.0.0, minipass@^4.0.2, minipass@^4.2.4, minipass@^4.2.5:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/minipass/-/minipass-4.2.5.tgz#9e0e5256f1e3513f8c34691dd68549e85b2c8ceb"
 
@@ -1414,9 +1433,9 @@ nopt@^6.0.0:
   dependencies:
     abbrev "^1.0.0"
 
-nopt@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/nopt/-/nopt-7.0.0.tgz#09220f930c072109c98ef8aaf39e1d5f0ff9b0d4"
+nopt@^7.0.0, nopt@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/nopt/-/nopt-7.1.0.tgz#91f6a3366182176e72ecab93a09c19b63b485f28"
   dependencies:
     abbrev "^2.0.0"
 
@@ -1441,9 +1460,9 @@ npm-bundled@^3.0.0:
   dependencies:
     npm-normalize-package-bin "^3.0.0"
 
-npm-install-checks@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/npm-install-checks/-/npm-install-checks-6.0.0.tgz#9a021d8e8b3956d61fd265c2eda4735bcd3d9b83"
+npm-install-checks@^6.0.0, npm-install-checks@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/npm-install-checks/-/npm-install-checks-6.1.0.tgz#7221210d9d746a40c37bf6c9b6c7a39f85e92998"
   dependencies:
     semver "^7.1.1"
 
@@ -1498,19 +1517,19 @@ npm-user-validate@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-2.0.0.tgz#7b69bbbff6f7992a1d9a8968d52fd6b6db5431b6"
 
-npm@^9.6.2:
-  version "9.6.2"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-9.6.2.tgz#b7858ab694c4335778c6d91e2310a61f2e369dac"
+npm@^9.6.3:
+  version "9.6.3"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-9.6.3.tgz#671355e34f4396ca7d722618996c95d3774d9fa0"
   dependencies:
     "@isaacs/string-locale-compare" "^1.1.0"
-    "@npmcli/arborist" "^6.2.5"
-    "@npmcli/config" "^6.1.4"
-    "@npmcli/map-workspaces" "^3.0.2"
+    "@npmcli/arborist" "^6.2.6"
+    "@npmcli/config" "^6.1.5"
+    "@npmcli/map-workspaces" "^3.0.3"
     "@npmcli/package-json" "^3.0.0"
     "@npmcli/run-script" "^6.0.0"
     abbrev "^2.0.0"
     archy "~1.0.0"
-    cacache "^17.0.4"
+    cacache "^17.0.5"
     chalk "^4.1.2"
     ci-info "^3.8.0"
     cli-columns "^4.0.0"
@@ -1518,33 +1537,33 @@ npm@^9.6.2:
     columnify "^1.6.0"
     fastest-levenshtein "^1.0.16"
     fs-minipass "^3.0.1"
-    glob "^8.1.0"
-    graceful-fs "^4.2.10"
+    glob "^9.3.1"
+    graceful-fs "^4.2.11"
     hosted-git-info "^6.1.1"
     ini "^3.0.1"
     init-package-json "^5.0.0"
     is-cidr "^4.0.2"
     json-parse-even-better-errors "^3.0.0"
     libnpmaccess "^7.0.2"
-    libnpmdiff "^5.0.13"
-    libnpmexec "^5.0.13"
-    libnpmfund "^4.0.13"
+    libnpmdiff "^5.0.14"
+    libnpmexec "^5.0.14"
+    libnpmfund "^4.0.14"
     libnpmhook "^9.0.3"
     libnpmorg "^5.0.3"
-    libnpmpack "^5.0.13"
-    libnpmpublish "^7.1.2"
+    libnpmpack "^5.0.14"
+    libnpmpublish "^7.1.3"
     libnpmsearch "^6.0.2"
     libnpmteam "^5.0.3"
     libnpmversion "^4.0.2"
     make-fetch-happen "^11.0.3"
-    minimatch "^6.2.0"
-    minipass "^4.2.4"
+    minimatch "^7.4.3"
+    minipass "^4.2.5"
     minipass-pipeline "^1.2.4"
     ms "^2.1.2"
     node-gyp "^9.3.1"
-    nopt "^7.0.0"
+    nopt "^7.1.0"
     npm-audit-report "^4.0.0"
-    npm-install-checks "^6.0.0"
+    npm-install-checks "^6.1.0"
     npm-package-arg "^10.1.0"
     npm-pick-manifest "^8.0.1"
     npm-profile "^7.0.1"
@@ -1553,11 +1572,11 @@ npm@^9.6.2:
     npmlog "^7.0.1"
     p-map "^4.0.0"
     pacote "^15.1.1"
-    parse-conflict-json "^3.0.0"
+    parse-conflict-json "^3.0.1"
     proc-log "^3.0.0"
     qrcode-terminal "^0.12.0"
     read "^2.0.0"
-    read-package-json "^6.0.0"
+    read-package-json "^6.0.1"
     read-package-json-fast "^3.0.2"
     semver "^7.3.8"
     ssri "^10.0.1"
@@ -1669,12 +1688,12 @@ pacote@^15.0.0, pacote@^15.0.8, pacote@^15.1.1:
     ssri "^10.0.0"
     tar "^6.1.11"
 
-parse-conflict-json@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/parse-conflict-json/-/parse-conflict-json-3.0.0.tgz#eb266cbeeb66e73c3e92806da4d4ace3b798acff"
+parse-conflict-json@^3.0.0, parse-conflict-json@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/parse-conflict-json/-/parse-conflict-json-3.0.1.tgz#67dc55312781e62aa2ddb91452c7606d1969960c"
   dependencies:
     json-parse-even-better-errors "^3.0.0"
-    just-diff "^5.0.1"
+    just-diff "^6.0.0"
     just-diff-apply "^5.2.0"
 
 parseurl@~1.3.3:
@@ -1684,6 +1703,13 @@ parseurl@~1.3.3:
 path-is-absolute@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz"
+
+path-scurry@^1.6.1:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.6.3.tgz#4eba7183d64ef88b63c7d330bddc3ba279dc6c40"
+  dependencies:
+    lru-cache "^7.14.1"
+    minipass "^4.0.2"
 
 path-to-regexp@0.1.7:
   version "0.1.7"
@@ -1783,11 +1809,11 @@ read-package-json-fast@^3.0.0, read-package-json-fast@^3.0.2:
     json-parse-even-better-errors "^3.0.0"
     npm-normalize-package-bin "^3.0.0"
 
-read-package-json@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/read-package-json/-/read-package-json-6.0.0.tgz#6a741841ad72a40e77a82b9c3c8c10e865bbc519"
+read-package-json@^6.0.0, read-package-json@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/read-package-json/-/read-package-json-6.0.1.tgz#566cb06bc05dbddefba4607e9096d5a9efbcd836"
   dependencies:
-    glob "^8.0.1"
+    glob "^9.3.0"
     json-parse-even-better-errors "^3.0.0"
     normalize-package-data "^5.0.0"
     npm-normalize-package-bin "^3.0.0"
