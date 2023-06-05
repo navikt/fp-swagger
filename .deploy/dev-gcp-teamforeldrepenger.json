@@ -96,6 +96,12 @@
       "url": "https://fpabakus.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpabakus/swagger",
       "name": "fp-abakus ekstern API"
+    },
+    {
+      "path": "/api",
+      "url": "http://fpoversikt",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpoversikt/swagger",
+      "name": "fp-oversikt"
     }
   ]
 }
