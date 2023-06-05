@@ -51,6 +51,8 @@ spec:
       autoLogin: true
   accessPolicy:
     outbound:
+      rules:
+        - application: fpoversikt
       external:
         {{#each externals as |external|}}
         - host: "{{external}}"
