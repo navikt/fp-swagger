@@ -20,7 +20,7 @@
     "node-cache": "^5.1.2",
     "npm": "^9.8.0",
     "openid-client": "^5.4.3",
-    "swagger-ui-express": "^4.6.3",
+    "swagger-ui-express": "^5.0.0",
     "ulid": "^2.3.0",
     "winston": "^3.9.0"
   }
