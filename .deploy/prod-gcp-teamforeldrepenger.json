@@ -17,8 +17,7 @@
     "fpfordel.prod-fss-pub.nais.io",
     "fpabakus.prod-fss-pub.nais.io",
     "fprisk.prod-fss-pub.nais.io",
-    "fpabonnent.prod-fss-pub.nais.io",
-    "fpinfo.prod-fss-pub.nais.io"
+    "fpabonnent.prod-fss-pub.nais.io"
   ],
   "customCss": ".swagger-ui .topbar { background-color: red; } .swagger-container { background: #F9D0C4; } .swagger-ui .scheme-container { background: #F9D0C4; }",
   "proxyRedirects": [
@@ -77,10 +76,10 @@
       "name": "fp-abonnent"
     },
     {
-      "path": "/fpinfo/api",
-      "url": "https://fpinfo.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpinfo/swagger",
-      "name": "fp-info"
+      "path": "/api",
+      "url": "http://fpoversikt",
+      "scope": "api://prod-gcp.teamforeldrepenger.fpoversikt/swagger",
+      "name": "fp-oversikt"
     },
     {
       "path": "/fpsak/ekstern/api",
@@ -93,12 +92,6 @@
       "url": "https://fpabakus.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fpabakus/swagger",
       "name": "fp-abakus ekstern API"
-    },
-    {
-      "path": "/api",
-      "url": "http://fpoversikt",
-      "scope": "api://prod-gcp.teamforeldrepenger.fpoversikt/swagger",
-      "name": "fp-oversikt"
     }
   ]
 }
