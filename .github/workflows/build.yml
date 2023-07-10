@@ -16,6 +16,9 @@ on:
 jobs:
   build-app:
     name: Build and test
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-latest
     outputs:
       build-version: ${{ steps.generate-build-version.outputs.build-version }}
