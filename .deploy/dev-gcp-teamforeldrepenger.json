@@ -1,6 +1,5 @@
 {
   "ingresses": [
-    "https://fpswagger.dev.intern.nav.no",
     "https://fpswagger.intern.dev.nav.no"
   ],
   "minReplicas": "1",
