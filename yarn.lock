@@ -751,9 +751,9 @@ exponential-backoff@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/exponential-backoff/-/exponential-backoff-3.1.1.tgz#64ac7526fe341ab18a39016cd22c787d01e00bf6"
 
-express-http-proxy@^1.6.0:
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/express-http-proxy/-/express-http-proxy-1.6.3.tgz"
+express-http-proxy@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/express-http-proxy/-/express-http-proxy-2.0.0.tgz#c47f4d8b53e8d9c2b9a2f1d158eedf6eb84828a5"
   dependencies:
     debug "^3.0.1"
     es6-promise "^4.1.1"
