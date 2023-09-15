@@ -38,15 +38,15 @@ const stdoutLogger = winston.createLogger({
 });
 
 const debug = (msg) => {
-  stdoutLogger.debug(msg);
+  stdoutLogger.debug(msg.replace(/\n|\r/g, ""));
 };
 
 const info = (msg) => {
-  stdoutLogger.info(msg);
+  stdoutLogger.info(msg.replace(/\n|\r/g, ""));
 };
 
 const warning = (msg) => {
-  stdoutLogger.warn(msg);
+  stdoutLogger.warn(msg.replace(/\n|\r/g, ""));
 };
 
 const error = (msg, err) => {
@@ -59,7 +59,7 @@ const error = (msg, err) => {
 
 const stream = {
   // Use the http severity
-  write: (message) => stdoutLogger.http(message),
+  write: (message) => stdoutLogger.http(message.replace(/\n|\r/g, "")),
 };
 
 const skip = () => process.env.NODE_ENV === 'production';
