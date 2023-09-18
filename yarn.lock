@@ -759,9 +759,9 @@ express-http-proxy@^2.0.0:
     es6-promise "^4.1.1"
     raw-body "^2.3.0"
 
-express-rate-limit@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-7.0.0.tgz#606d393bebf62f2f44d98d76330151587015cba0"
+express-rate-limit@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-7.0.1.tgz#933af24166990ea4fc8004335e6cd6c86fd31562"
 
 express@^4.18.2:
   version "4.18.2"
