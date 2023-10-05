@@ -1132,9 +1132,9 @@ jackspeak@^2.0.3:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jose@^4.14.4, jose@^4.14.6:
-  version "4.14.6"
-  resolved "https://registry.yarnpkg.com/jose/-/jose-4.14.6.tgz#94dca1d04a0ad8c6bff0998cdb51220d473cc3af"
+jose@^4.14.4, jose@^4.15.2:
+  version "4.15.2"
+  resolved "https://registry.yarnpkg.com/jose/-/jose-4.15.2.tgz#61f97383f0b433d45da26d35094155a30a672d92"
 
 json-parse-even-better-errors@^3.0.0:
   version "3.0.0"
