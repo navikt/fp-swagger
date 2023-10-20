@@ -22,6 +22,6 @@
     "openid-client": "^5.6.1",
     "swagger-ui-express": "^5.0.0",
     "ulid": "^2.3.0",
-    "winston": "^3.10.0"
+    "winston": "^3.11.0"
   }
 }
