@@ -25,7 +25,9 @@ spec:
   replicas:
     min: {{minReplicas}}
     max: {{maxReplicas}}
-    cpuThresholdPercentage: 50
+    scalingStrategy:
+      cpu:
+        thresholdPercentage: 50
   resources:
     limits:
       cpu: 500m
