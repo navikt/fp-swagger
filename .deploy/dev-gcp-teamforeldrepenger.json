@@ -83,7 +83,6 @@
       "scope": "api://dev-gcp.teamforeldrepenger.fpoversikt/swagger",
       "name": "fp-oversikt"
     },
-    ,
     {
       "path": "/ftinntektsmelding/api",
       "url": "http://ftinntektsmelding",
