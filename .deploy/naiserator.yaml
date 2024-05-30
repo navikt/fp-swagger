@@ -55,6 +55,7 @@ spec:
     outbound:
       rules:
         - application: fpoversikt
+        - application: ftinntektsmelding
       external:
         {{#each externals as |external|}}
         - host: "{{external}}"
