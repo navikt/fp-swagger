@@ -83,6 +83,13 @@
       "scope": "api://dev-gcp.teamforeldrepenger.fpoversikt/swagger",
       "name": "fp-oversikt"
     },
+    ,
+    {
+      "path": "/ftinntektsmelding/api",
+      "url": "http://ftinntektsmelding",
+      "scope": "api://dev-gcp.teamforeldrepenger.ftinntektsmelding/swagger",
+      "name": "ft-inntektsmelding"
+    },
     {
       "path": "/fpsak/ekstern/api",
       "url": "https://fpsak-api.dev-fss-pub.nais.io",
