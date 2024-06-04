@@ -90,6 +90,12 @@
       "name": "ft-inntektsmelding"
     },
     {
+      "path": "/fpinntektsmelding/api",
+      "url": "http://fpinntektsmelding",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
+      "name": "fp-inntektsmelding"
+    },
+    {
       "path": "/fpsak/ekstern/api",
       "url": "https://fpsak-api.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
