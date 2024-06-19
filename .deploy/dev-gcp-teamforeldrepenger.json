@@ -7,8 +7,7 @@
   "env": "development",
   "allowAllUsers": true,
   "groups": [
-    "f1b82579-c5b5-4617-9673-8ace5ff67f63",
-    "5a7b4d5e-f80b-451c-aae2-2ab1c90f039d"
+    "f1b82579-c5b5-4617-9673-8ace5ff67f63"
   ],
   "externals": [
     "fpsak-api.dev-fss-pub.nais.io",
