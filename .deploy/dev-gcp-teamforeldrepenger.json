@@ -83,7 +83,7 @@
       "name": "fp-oversikt"
     },
     {
-      "path": "/fpinntektsmelding/api",
+      "path": "/fpinntektsmelding/forvaltning/api",
       "url": "http://fpinntektsmelding",
       "scope": "api://dev-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
       "name": "fp-inntektsmelding"
