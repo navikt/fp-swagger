@@ -1,4 +1,4 @@
-FROM gcr.io/distroless/nodejs18-debian11:nonroot
+FROM gcr.io/distroless/nodejs22-debian12:nonroot
 
 LABEL org.opencontainers.image.source=https://github.com/navikt/fp-swagger
 ENV TZ="Europe/Oslo"
