@@ -81,10 +81,10 @@
       "name": "fp-oversikt"
     },
     {
-      "path": "/fpsak/ekstern/api",
-      "url": "https://fpsak-api.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpsak/swagger",
-      "name": "fp-sak ekstern API"
+      "path": "/fpinntektsmelding/forvaltning/api",
+      "url": "http://fpinntektsmelding",
+      "scope": "api://prod-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
+      "name": "fp-inntektsmelding"
     },
     {
       "path": "/fpabakus/ekstern/api",

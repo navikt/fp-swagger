@@ -89,12 +89,6 @@
       "name": "fp-inntektsmelding"
     },
     {
-      "path": "/fpsak/ekstern/api",
-      "url": "https://fpsak-api.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
-      "name": "fp-sak ekstern API"
-    },
-    {
       "path": "/fpabakus/ekstern/api",
       "url": "https://fpabakus.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpabakus/swagger",
