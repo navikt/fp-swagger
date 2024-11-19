@@ -28,20 +28,26 @@ jobs:
       - name: Sette opp Node
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # ratchet:actions/setup-node@v4.1.0
         with:
-          node-version: 18
+          node-version: 22
           registry-url: https://npm.pkg.github.com/
           scope: '@navikt'
-          cache: 'yarn'
       - name: Generate build version
         id: generate-build-version
         run: |
           echo "build-version=$(date +%Y.%m.%d.%H%M%S)-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
       - name: Print build version
         run: echo "Generated build-version is ${{ steps.generate-build-version.outputs.build-version }}"
-      - name: Run yarn install
-        run: yarn install --ignore-optional --no-progress --frozen-lockfile
+
+      - name: Install server dependencies
+        run: npm install
+        working-directory: server
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+
+      - name: Build server
+        run: npm run build
+        working-directory: server
+
       - name: Bygg og push docker image
         if: github.ref_name == 'master'
         uses: navikt/fp-gha-workflows/.github/actions/build-push-docker-image@main # ratchet:exclude
