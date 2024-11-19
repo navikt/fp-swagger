@@ -86,7 +86,8 @@ function startApp() {
     }
   });
 
-  server.use("/", setupRoutes);
+  server.use("/", setupRoutes());
+
   const port = config.server.port;
   server.listen(port, () => logger.info(`Listening on port ${port}`));
 }

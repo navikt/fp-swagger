@@ -15,8 +15,6 @@ const stripTrailingSlash = (str: string) =>
 
 const proxyOptions = (api: ProxyConfig["apis"][0]) =>
   ({
-    parseReqBody: false,
-    timeout: 60_000,
     proxyReqOptDecorator: (options, request) => {
       // I tilfelle headers er undefined.
       options.headers = options.headers ?? {};

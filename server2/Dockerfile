@@ -1,4 +1,4 @@
-FROM gcr.io/distroless/nodejs22-debian12:nonroot
+FROM gcr.io/distroless/nodejs22-debian12
 
 LABEL org.opencontainers.image.source=https://github.com/navikt/fp-swagger
 ENV TZ="Europe/Oslo"
@@ -6,7 +6,7 @@ ENV NODE_ENV production
 
 WORKDIR /app
 
-COPY server2/dist ./
+COPY .. ./
 
 EXPOSE 8080
-CMD ["./index.js"]
+CMD ["dist/server.js"]
