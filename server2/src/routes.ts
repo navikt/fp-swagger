@@ -2,7 +2,7 @@ import express from "express";
 import swaggerUi from "swagger-ui-express";
 
 import config from "./config.js";
-import reverseProxy from "./reverse-proxy.js";
+import { setupProxies } from "./reverseProxy.js";
 
 export const setupRoutes = () => {
   const router = express.Router();
@@ -29,7 +29,7 @@ export const setupRoutes = () => {
   router.get("/", swaggerUi.setup(undefined, options));
 
   // set up reverse proxy for calling APIs/backends using the on-behalf-of flow
-  reverseProxy.setup(router);
+  setupProxies(router);
 
   return router;
 };
