@@ -19,17 +19,16 @@ const { port } = config.server;
 async function startApp() {
   try {
     server.use(timeout('10m'));
-    headers.setup(server);
-
-    // Logging i json format
+    addHeaders(server);
     server.use(logger.morganMiddleware);
-
-    server.use(bodyParser.json());
-    server.use(bodyParser.urlencoded({ extended: true }));
-
     server.use(limit);
-
     server.set('trust proxy', 1);
+
+    //
+    // server.use(bodyParser.json());
+    // server.use(bodyParser.urlencoded({ extended: true }));
+
+
 
     server.use(
       helmet({
