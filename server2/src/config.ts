@@ -33,18 +33,6 @@ const server = {
   port: envVar("PORT", false) || 3000,
 };
 
-const azureAd = {
-  // automatically provided by NAIS at runtime
-  discoveryUrl: envVar("AZURE_APP_WELL_KNOWN_URL", true),
-  clientId: envVar("AZURE_APP_CLIENT_ID", true),
-  clientJwks: configValueAsJson("AZURE_APP_JWKS", true),
-  graphUrl: envVar("MS_GRAPH_URL", false),
-
-  // leave at default
-  tokenEndpointAuthMethod: "private_key_jwt",
-  tokenEndpointAuthSigningAlg: "RS256",
-};
-
 const cors = {
   allowedHeaders: envVar("CORS_ALLOWED_HEADERS", false) || "Nav-CallId",
   exposedHeaders: envVar("CORS_EXPOSED_HEADERS", false) || "",
@@ -100,9 +88,7 @@ const swagger = {
 
 export default {
   server,
-  azureAd,
   reverseProxyConfig: getProxyConfig(),
   cors,
   swagger,
 };
-// TODO: slett ubrukte
