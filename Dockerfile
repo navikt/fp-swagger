@@ -6,7 +6,7 @@ ENV NODE_ENV production
 
 WORKDIR /app
 
-COPY server/dist ./
+COPY server2/dist ./
 
 EXPOSE 8080
 CMD ["./index.js"]
