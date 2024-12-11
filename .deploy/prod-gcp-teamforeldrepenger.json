@@ -57,7 +57,7 @@
       "name": "fp-fordel"
     },
     {
-      "path": "/fpabakus/api",
+      "path": "/fpabakus/forvaltning/api",
       "url": "https://fpabakus.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fpabakus/swagger",
       "name": "fp-abakus"
@@ -85,12 +85,6 @@
       "url": "http://fpinntektsmelding",
       "scope": "api://prod-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
       "name": "fp-inntektsmelding"
-    },
-    {
-      "path": "/fpabakus/ekstern/api",
-      "url": "https://fpabakus.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpabakus/swagger",
-      "name": "fp-abakus ekstern API"
     }
   ]
 }
