@@ -81,6 +81,12 @@
       "name": "fp-oversikt"
     },
     {
+      "path": "/api",
+      "url": "http://fpsoknad",
+      "scope": "api://prod-gcp.teamforeldrepenger.fpsoknad/swagger",
+      "name": "fp-soknad"
+    },
+    {
       "path": "/fpinntektsmelding/forvaltning/api",
       "url": "http://fpinntektsmelding",
       "scope": "api://prod-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
