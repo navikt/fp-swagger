@@ -75,7 +75,7 @@
       "name": "fp-abonnent"
     },
     {
-      "path": "/api",
+      "path": "/fpoversikt/api",
       "url": "http://fpoversikt",
       "scope": "api://prod-gcp.teamforeldrepenger.fpoversikt/swagger",
       "name": "fp-oversikt"
