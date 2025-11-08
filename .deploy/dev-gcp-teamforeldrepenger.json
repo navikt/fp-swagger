@@ -23,7 +23,7 @@
   "customCss": "",
   "proxyRedirects": [
     {
-      "path": "/fpsak/api",
+      "path": "/fpsak/forvaltning/api",
       "url": "https://fpsak-api.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
       "name": "fp-sak"

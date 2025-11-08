@@ -21,7 +21,7 @@
   "customCss": ".swagger-ui .topbar { background-color: red; } .swagger-container { background: #F9D0C4; } .swagger-ui .scheme-container { background: #F9D0C4; }",
   "proxyRedirects": [
     {
-      "path": "/fpsak/api",
+      "path": "/fpsak/forvaltning/api",
       "url": "https://fpsak-api.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fpsak/swagger",
       "name": "fp-sak"
