@@ -30,7 +30,7 @@ services:
       AZURE_APP_WELL_KNOWN_URL: http://host.docker.internal:8080/azureAd/.well-known/openid-configuration
       PROXY_CONFIG: | 
         {"apis":[
-          {"path":"/fpsak/api","url":"http://192.168.5.2:8081/fpsak/api/openapi.json","scopes":"api://fpsak/.default","name":"fpsak"}
+          {"path":"/fpsak/forvaltning/api","url":"http://192.168.5.2:8081/forvaltning/api/openapi.json","scopes":"api://fpsak/.default","name":"fpsak"}
         ]}
       PORT: 9090
     container_name: fpswagger
