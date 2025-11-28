@@ -56,7 +56,7 @@
       "name": "fp-abakus"
     },
     {
-      "path": "/fprisk/api",
+      "path": "/fprisk/forvaltning/api",
       "url": "https://fprisk.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fprisk/swagger",
       "name": "fp-risk"
