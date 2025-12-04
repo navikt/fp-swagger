@@ -86,6 +86,12 @@
       "url": "http://fpinntektsmelding",
       "scope": "api://dev-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
       "name": "fp-inntektsmelding"
+    },
+    {
+      "path": "/fpmottak/forvaltning/api",
+      "url": "http://fpmottak",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpmottak/swagger",
+      "name": "fp-mottak"
     }
   ]
 }

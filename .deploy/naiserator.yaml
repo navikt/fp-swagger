@@ -57,6 +57,7 @@ spec:
         - application: fpoversikt
         - application: fpsoknad
         - application: fpinntektsmelding
+        - application: fpmottak
       external:
         {{#each externals as |external|}}
         - host: "{{external}}"
