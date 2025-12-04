@@ -10,7 +10,6 @@
   "externals": [
     "fpsak-api.prod-fss-pub.nais.io",
     "fptilbake.prod-fss-pub.nais.io",
-    "fpoppdrag.prod-fss-pub.nais.io",
     "fpformidling.prod-fss-pub.nais.io",
     "fplos.prod-fss-pub.nais.io",
     "fpfordel.prod-fss-pub.nais.io",
@@ -31,12 +30,6 @@
       "url": "https://fptilbake.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fptilbake/swagger",
       "name": "fp-tilbake"
-    },
-    {
-      "path": "/fpoppdrag/api",
-      "url": "https://fpoppdrag.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpoppdrag/swagger",
-      "name": "fp-oppdrag"
     },
     {
       "path": "/fpformidling/api",
@@ -63,7 +56,7 @@
       "name": "fp-abakus"
     },
     {
-      "path": "/fprisk/api",
+      "path": "/fprisk/forvaltning/api",
       "url": "https://fprisk.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fprisk/swagger",
       "name": "fp-risk"
