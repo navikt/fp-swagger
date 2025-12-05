@@ -14,7 +14,6 @@
     "fptilbake.dev-fss-pub.nais.io",
     "fpformidling.dev-fss-pub.nais.io",
     "fplos.dev-fss-pub.nais.io",
-    "fpfordel.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
     "fprisk.dev-fss-pub.nais.io",
     "fpabonnent.dev-fss-pub.nais.io"
@@ -44,12 +43,6 @@
       "url": "https://fplos.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fplos/swagger",
       "name": "fp-los"
-    },
-    {
-      "path": "/fpfordel/api",
-      "url": "https://fpfordel.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpfordel/swagger",
-      "name": "fp-fordel"
     },
     {
       "path": "/fpabakus/forvaltning/api",

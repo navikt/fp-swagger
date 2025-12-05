@@ -12,7 +12,6 @@
     "fptilbake.prod-fss-pub.nais.io",
     "fpformidling.prod-fss-pub.nais.io",
     "fplos.prod-fss-pub.nais.io",
-    "fpfordel.prod-fss-pub.nais.io",
     "fpabakus.prod-fss-pub.nais.io",
     "fprisk.prod-fss-pub.nais.io",
     "fpabonnent.prod-fss-pub.nais.io"
@@ -42,12 +41,6 @@
       "url": "https://fplos.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fplos/swagger",
       "name": "fp-los"
-    },
-    {
-      "path": "/fpfordel/api",
-      "url": "https://fpfordel.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpfordel/swagger",
-      "name": "fp-fordel"
     },
     {
       "path": "/fpabakus/forvaltning/api",
