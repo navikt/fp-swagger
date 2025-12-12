@@ -15,8 +15,7 @@
     "fpformidling.dev-fss-pub.nais.io",
     "fplos.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
-    "fprisk.dev-fss-pub.nais.io",
-    "fpabonnent.dev-fss-pub.nais.io"
+    "fprisk.dev-fss-pub.nais.io"
   ],
   "customCss": "",
   "proxyRedirects": [
@@ -55,12 +54,6 @@
       "url": "https://fprisk.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fprisk/swagger",
       "name": "fp-risk"
-    },
-    {
-      "path": "/fpabonnent/api",
-      "url": "https://fpabonnent.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpabonnent/swagger",
-      "name": "fp-abonnent"
     },
     {
       "path": "/fpoversikt/forvaltning/api",

@@ -13,8 +13,7 @@
     "fpformidling.prod-fss-pub.nais.io",
     "fplos.prod-fss-pub.nais.io",
     "fpabakus.prod-fss-pub.nais.io",
-    "fprisk.prod-fss-pub.nais.io",
-    "fpabonnent.prod-fss-pub.nais.io"
+    "fprisk.prod-fss-pub.nais.io"
   ],
   "customCss": ".swagger-ui .topbar { background-color: red; } .swagger-container { background: #F9D0C4; } .swagger-ui .scheme-container { background: #F9D0C4; }",
   "proxyRedirects": [
@@ -53,12 +52,6 @@
       "url": "https://fprisk.prod-fss-pub.nais.io",
       "scope": "api://prod-fss.teamforeldrepenger.fprisk/swagger",
       "name": "fp-risk"
-    },
-    {
-      "path": "/fpabonnent/api",
-      "url": "https://fpabonnent.prod-fss-pub.nais.io",
-      "scope": "api://prod-fss.teamforeldrepenger.fpabonnent/swagger",
-      "name": "fp-abonnent"
     },
     {
       "path": "/fpoversikt/forvaltning/api",
