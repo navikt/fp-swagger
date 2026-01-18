@@ -26,19 +26,19 @@
       "name": "fp-sak"
     },
     {
-      "path": "/fptilbake/api",
+      "path": "/fptilbake/forvaltning/api",
       "url": "https://fptilbake.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fptilbake/swagger",
       "name": "fp-tilbake"
     },
     {
-      "path": "/fpformidling/api",
+      "path": "/fpformidling/forvaltning/api",
       "url": "https://fpformidling.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpformidling/swagger",
       "name": "fp-formidling"
     },
     {
-      "path": "/fplos/api",
+      "path": "/fplos/forvaltning/api",
       "url": "https://fplos.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fplos/swagger",
       "name": "fp-los"
