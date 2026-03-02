@@ -2,15 +2,12 @@ name: Build and deploy
 on:
   push:
     branches:
-      - '**'
+      - "**"
     paths-ignore:
-      - '**.md'
-      - '**.MD'
-      - '.gitignore'
-      - 'LICENSE'
-      - 'CODEOWNERS'
-      - 'dokumentasjon/**'
-      - 'lokalutvikling/**'
+      - "**.md"
+      - "**.MD"
+      - ".gitignore"
+      - "LICENSE"
 jobs:
   build-app:
     name: Build and test
@@ -22,21 +19,13 @@ jobs:
     outputs:
       build-version: ${{ steps.generate-build-version.outputs.build-version }}
     steps:
-      - name: Sjekk ut kode
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6.0.2
-      - run: git fetch --prune --unshallow
-      - name: Sette opp Node
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # ratchet:actions/setup-node@v6.2.0
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6.0.2
+
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # ratchet:actions/setup-node@v6.2.0
         with:
           node-version: 22
           registry-url: https://npm.pkg.github.com/
-          scope: '@navikt'
-      - name: Generate build version
-        id: generate-build-version
-        run: |
-          echo "build-version=$(date +%Y.%m.%d.%H%M%S)-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
-      - name: Print build version
-        run: echo "Generated build-version is ${{ steps.generate-build-version.outputs.build-version }}"
+          scope: "@navikt"
 
       - name: Install server dependencies
         run: npm install
@@ -44,21 +33,31 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
 
+      - name: Eslint
+        run: npm run eslint
+        working-directory: server
+
       - name: Build server
         run: npm run build
         working-directory: server
 
+      - name: Generate build version
+        id: generate-build-version
+        run: |
+          echo "build-version=$(date +%Y.%m.%d.%H%M%S)-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+
+      - name: Print build version
+        run: echo "Generated build-version is ${{ steps.generate-build-version.outputs.build-version }}"
+
       - name: Bygg og push docker image
         if: github.ref_name == 'master'
-        uses: navikt/fp-gha-workflows/.github/actions/build-push-docker-image@main # ratchet:exclude
+        uses: navikt/fp-gha-workflows/.github/actions/build-push-docker-image@main
         with:
           build-version: ${{ steps.generate-build-version.outputs.build-version }}
           docker_context: "./server"
           dockerfile: "./server/Dockerfile"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           push-image: ${{ github.ref_name == 'master' }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+
   deploy-dev:
     name: Deploy dev
     permissions:

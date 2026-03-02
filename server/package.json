@@ -7,8 +7,9 @@
   "scripts": {
     "build": "tsc",
     "check:types": "tsc --noemit",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "eslint": "eslint src/**/*.ts* --color",
+    "eslint:fix": "eslint --fix src/**/*.ts* --color",
+    "prettier": "prettier --write src"
   },
   "author": "NAV",
   "license": "MIT",
