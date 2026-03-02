@@ -14,7 +14,7 @@
   "author": "NAV",
   "license": "MIT",
   "dependencies": {
-    "@navikt/oasis": "3.4.0",
+    "@navikt/oasis": "4.1.4",
     "connect-timeout": "1.9.1",
     "cors": "2.8.5",
     "dotenv": "16.4.5",
