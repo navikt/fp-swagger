@@ -36,7 +36,7 @@
     "@types/express-http-proxy": "1.6.6",
     "@types/morgan": "1.9.10",
     "@types/swagger-ui-express": "4.1.8",
-    "@typescript-eslint/eslint-plugin": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "8.56.1",
     "@vercel/ncc": "0.38.4",
     "eslint": "9.39.3",
     "eslint-plugin-prettier": "5.5.5",
@@ -45,6 +45,6 @@
     "parcel": "2.16.4",
     "prettier": "3.8.1",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.56.0"
+    "typescript-eslint": "8.56.1"
   }
 }
