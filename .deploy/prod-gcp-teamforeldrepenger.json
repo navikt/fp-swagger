@@ -10,7 +10,6 @@
   "externals": [
     "fpsak-api.prod-fss-pub.nais.io",
     "fptilbake.prod-fss-pub.nais.io",
-    "fpoppdrag.prod-fss-pub.nais.io",
     "fplos.prod-fss-pub.nais.io",
     "fpabakus.prod-fss-pub.nais.io",
     "fprisk.prod-fss-pub.nais.io"

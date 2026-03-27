@@ -12,7 +12,6 @@
   "externals": [
     "fpsak-api.dev-fss-pub.nais.io",
     "fptilbake.dev-fss-pub.nais.io",
-    "fpformidling.dev-fss-pub.nais.io",
     "fplos.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
     "fprisk.dev-fss-pub.nais.io"
