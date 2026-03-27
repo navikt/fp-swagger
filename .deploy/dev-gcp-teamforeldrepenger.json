@@ -12,50 +12,36 @@
   "externals": [
     "fpsak-api.dev-fss-pub.nais.io",
     "fptilbake.dev-fss-pub.nais.io",
-    "fpoppdrag.dev-fss-pub.nais.io",
+    "fpformidling.dev-fss-pub.nais.io",
     "fplos.dev-fss-pub.nais.io",
-    "fpfordel.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
-    "fprisk.dev-fss-pub.nais.io",
-    "fpabonnent.dev-fss-pub.nais.io"
+    "fprisk.dev-fss-pub.nais.io"
   ],
   "customCss": "",
   "proxyRedirects": [
     {
-      "path": "/fpsak/api",
+      "path": "/fpsak/forvaltning/api",
       "url": "https://fpsak-api.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fpsak/swagger",
       "name": "fp-sak"
     },
     {
-      "path": "/fptilbake/api",
+      "path": "/fptilbake/forvaltning/api",
       "url": "https://fptilbake.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fptilbake/swagger",
       "name": "fp-tilbake"
     },
     {
-      "path": "/fpoppdrag/api",
-      "url": "https://fpoppdrag.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpoppdrag/swagger",
-      "name": "fp-oppdrag"
-    },
-    {
-      "path": "/fpformidling/api",
+      "path": "/fpformidling/forvaltning/api",
       "url": "http://fpformidling",
       "scope": "api://dev-gcp.teamforeldrepenger.fpformidling/swagger",
       "name": "fp-formidling"
     },
     {
-      "path": "/fplos/api",
+      "path": "/fplos/forvaltning/api",
       "url": "https://fplos.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fplos/swagger",
       "name": "fp-los"
-    },
-    {
-      "path": "/fpfordel/api",
-      "url": "https://fpfordel.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpfordel/swagger",
-      "name": "fp-fordel"
     },
     {
       "path": "/fpabakus/forvaltning/api",
@@ -64,28 +50,34 @@
       "name": "fp-abakus"
     },
     {
-      "path": "/fprisk/api",
+      "path": "/fprisk/forvaltning/api",
       "url": "https://fprisk.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fprisk/swagger",
       "name": "fp-risk"
     },
     {
-      "path": "/fpabonnent/api",
-      "url": "https://fpabonnent.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpabonnent/swagger",
-      "name": "fp-abonnent"
-    },
-    {
-      "path": "/api",
+      "path": "/fpoversikt/forvaltning/api",
       "url": "http://fpoversikt",
       "scope": "api://dev-gcp.teamforeldrepenger.fpoversikt/swagger",
       "name": "fp-oversikt"
+    },
+    {
+      "path": "/fpsoknad/forvaltning/api",
+      "url": "http://fpsoknad",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpsoknad/swagger",
+      "name": "fp-soknad"
     },
     {
       "path": "/fpinntektsmelding/forvaltning/api",
       "url": "http://fpinntektsmelding",
       "scope": "api://dev-gcp.teamforeldrepenger.fpinntektsmelding/swagger",
       "name": "fp-inntektsmelding"
+    },
+    {
+      "path": "/fpmottak/forvaltning/api",
+      "url": "http://fpmottak",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpmottak/swagger",
+      "name": "fp-mottak"
     }
   ]
 }

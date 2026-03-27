@@ -31,10 +31,10 @@ spec:
   resources:
     limits:
       cpu: 500m
-      memory: 64Mi
+      memory: 128Mi
     requests:
       cpu: 50m
-      memory: 32Mi
+      memory: 64Mi
   azure:
     application:
       enabled: true
@@ -55,7 +55,9 @@ spec:
     outbound:
       rules:
         - application: fpoversikt
+        - application: fpsoknad
         - application: fpinntektsmelding
+        - application: fpmottak
         - application: fpformidling
       external:
         {{#each externals as |external|}}
