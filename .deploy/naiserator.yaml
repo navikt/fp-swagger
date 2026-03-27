@@ -56,6 +56,7 @@ spec:
       rules:
         - application: fpoversikt
         - application: fpinntektsmelding
+        - application: fpformidling
       external:
         {{#each externals as |external|}}
         - host: "{{external}}"

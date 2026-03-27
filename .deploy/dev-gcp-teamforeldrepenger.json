@@ -13,7 +13,6 @@
     "fpsak-api.dev-fss-pub.nais.io",
     "fptilbake.dev-fss-pub.nais.io",
     "fpoppdrag.dev-fss-pub.nais.io",
-    "fpformidling.dev-fss-pub.nais.io",
     "fplos.dev-fss-pub.nais.io",
     "fpfordel.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
@@ -42,8 +41,8 @@
     },
     {
       "path": "/fpformidling/api",
-      "url": "https://fpformidling.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fpformidling/swagger",
+      "url": "http://fpformidling",
+      "scope": "api://dev-gcp.teamforeldrepenger.fpformidling/swagger",
       "name": "fp-formidling"
     },
     {
