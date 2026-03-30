@@ -83,7 +83,7 @@
       "path": "/fpformidling/forvaltning/api",
       "url": "http://fpformidling",
       "scope": "api://dev-gcp.teamforeldrepenger.fpformidling/swagger",
-      "name": "fp-formidling"
+      "name": "fp-formidling-gcp"
     }
   ]
 }
