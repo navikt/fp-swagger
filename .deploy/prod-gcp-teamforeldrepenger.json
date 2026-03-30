@@ -76,6 +76,12 @@
       "url": "http://fpmottak",
       "scope": "api://prod-gcp.teamforeldrepenger.fpmottak/swagger",
       "name": "fp-mottak"
+    },
+    {
+      "path": "/fpformidling/forvaltning/api",
+      "url": "http://fpformidling",
+      "scope": "api://prod-gcp.teamforeldrepenger.fpformidling/swagger",
+      "name": "fp-formidling-gcp"
     }
   ]
 }
