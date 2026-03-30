@@ -2,4 +2,5 @@
 *
 
 #except
+!node_modules
 !dist
