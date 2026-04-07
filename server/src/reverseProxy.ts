@@ -1,5 +1,3 @@
-import url from "node:url";
-
 import { getToken, requestAzureOboToken } from "@navikt/oasis";
 import { Router } from "express";
 import proxy, { ProxyOptions } from "express-http-proxy";
@@ -52,14 +50,19 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
       });
     },
     proxyReqPathResolver: (req) => {
-      const urlFromApi = url.parse(api.url);
+      const urlFromApi = new URL(api.url);
       const pathFromApi =
         urlFromApi.pathname === "/" ? "" : urlFromApi.pathname;
 
-      const urlFromRequest = url.parse(req.originalUrl);
+      const urlFromRequest = new URL(
+        req.originalUrl,
+        `http://${req.headers.host}`,
+      );
       const pathFromRequest = urlFromRequest.pathname;
 
-      const queryString = urlFromRequest.query;
+      const queryString = urlFromRequest.search
+        ? urlFromRequest.search.slice(1)
+        : "";
       const newPath =
         (pathFromApi || "") +
         (pathFromRequest || "") +
@@ -111,7 +114,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
 export const setupProxies = (router: Router) => {
   for (const api of config.reverseProxyConfig.apis) {
     router.use(
-      `${api.path}/*`,
+      `${api.path}/*splat`,
       (request, response, next) => {
         if (request.timedout) {
           logger.warning(`Request for ${request.originalUrl} timed out!`);

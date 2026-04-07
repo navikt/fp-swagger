@@ -4,3 +4,4 @@
 #except
 !node_modules
 !dist
+!package.json
