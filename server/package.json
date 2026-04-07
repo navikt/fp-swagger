@@ -6,10 +6,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "check:types": "tsc --noemit",
+    "tsc": "tsc --noEmit",
     "eslint": "eslint src/**/*.ts* --color",
     "eslint:fix": "eslint --fix src/**/*.ts* --color",
-    "prettier": "prettier --write src"
+    "prettier:fix": "prettier --write src"
   },
   "author": "NAV",
   "license": "MIT",
@@ -39,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "8.58.0",
     "@vercel/ncc": "0.38.4",
     "eslint": "10.2.0",
+    "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-unicorn": "64.0.0",
