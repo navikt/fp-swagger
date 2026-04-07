@@ -60,9 +60,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
       );
       const pathFromRequest = urlFromRequest.pathname;
 
-      const queryString = urlFromRequest.search
-        ? urlFromRequest.search.slice(1)
-        : "";
+      const queryString = urlFromRequest.searchParams.toString();
       const newPath =
         (pathFromApi || "") +
         (pathFromRequest || "") +
