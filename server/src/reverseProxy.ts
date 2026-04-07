@@ -17,7 +17,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
   // e.g. '/fplos/forvaltning/api' → '/fplos' (matches servers[0].url in the spec).
   // Used to correctly rewrite paths for "Try it out" calls — avoids path doubling
   // caused by api.path containing both the servers base and the operation prefix.
-  const serverBase = api.path.substring(0, api.path.indexOf("/", 1));
+  const serverBase = api.path.slice(0, Math.max(0, api.path.indexOf("/", 1)));
 
   return {
     proxyReqOptDecorator: (options, request) => {
@@ -104,8 +104,10 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
           const spec = JSON.parse(proxyResData.toString("utf8"));
           spec.servers = [{ url: namePrefix }];
           return JSON.stringify(spec);
-        } catch (e) {
-          logger.warning(`Failed to parse openapi.json for ${api.name}: ${e}`);
+        } catch (error) {
+          logger.warning(
+            `Failed to parse openapi.json for ${api.name}: ${error}`,
+          );
           return proxyResData;
         }
       }
