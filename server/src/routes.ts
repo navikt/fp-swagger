@@ -12,7 +12,7 @@ export const setupRoutes = () => {
     customCss: config.swagger.customCss,
     swaggerOptions: {
       urls: config.reverseProxyConfig.apis.map((api) => ({
-        url: `${api.path}/openapi.json`,
+        url: `/proxy/${api.name}/openapi.json`,
         name: api.name,
       })),
       deepLinking: true,
