@@ -13,11 +13,10 @@ const stripTrailingSlash = (str: string) =>
 
 const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
   const namePrefix = `/proxy/${api.name}`;
-  // Derive the app's servers base from the first path segment of api.path.
-  // e.g. '/fplos/forvaltning/api' → '/fplos' (matches servers[0].url in the spec).
+  // Første segment av api.path er applikasjonens context-path. Resten er path til forvaltningsgrensesnittet
+  // Context-path brukes i openapi/servers.uri
   // Used to correctly rewrite paths for "Try it out" calls — avoids path doubling
-  // caused by api.path containing both the servers base and the operation prefix.
-  const serverBase = api.path.slice(0, Math.max(0, api.path.indexOf("/", 1)));
+  const contextPath = api.path.slice(0, Math.max(0, api.path.indexOf("/", 1)));
 
   return {
     proxyReqOptDecorator: (options, request) => {
@@ -75,10 +74,10 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
       );
 
       // Spec fetch:  replace namePrefix with api.path  e.g. /proxy/fp-los → /fplos/forvaltning/api
-      // API calls:   replace namePrefix with serverBase  e.g. /proxy/fp-los → /fplos
+      // API calls:   replace namePrefix with contextPath  e.g. /proxy/fp-los → /fplos
       //              Using api.path here would double the path: /fplos/forvaltning/api/forvaltning/api/...
       const isSpecFetch = urlFromRequest.pathname.endsWith("/openapi.json");
-      const replacement = isSpecFetch ? api.path : serverBase;
+      const replacement = isSpecFetch ? api.path : contextPath;
       const pathFromRequest = urlFromRequest.pathname.replace(
         namePrefix,
         replacement,
