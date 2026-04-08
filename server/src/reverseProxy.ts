@@ -11,15 +11,25 @@ const xNavCallId = "x_Nav-CallId";
 const stripTrailingSlash = (str: string) =>
   str.endsWith("/") ? str.slice(0, -1) : str;
 
-const proxyOptions = (api: ProxyConfig["apis"][0]) =>
-  ({
+const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
+  const namePrefix = `/proxy/${api.name}`;
+
+  return {
     proxyReqOptDecorator: (options, request) => {
-      // I tilfelle headers er undefined.
       options.headers = options.headers ?? {};
       const requestTime = Date.now();
 
       options.headers[xNavCallId] = request.headers[xNavCallId] ?? ulid();
       options.headers[xTimestamp] = requestTime;
+
+      // For spec requests: prevent gzip (so JSON.parse works in userResDecorator)
+      // and strip cache headers (so backend always returns 200 with body, not 304)
+      if (request.originalUrl?.includes("/openapi.json")) {
+        options.headers["accept-encoding"] = "identity";
+        delete options.headers["if-none-match"];
+        delete options.headers["if-modified-since"];
+      }
+
       delete options.headers.cookie;
 
       return new Promise((resolve, reject) => {
@@ -58,7 +68,22 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
         req.originalUrl,
         `http://${req.headers.host}`,
       );
-      const pathFromRequest = urlFromRequest.pathname;
+
+      // Første segment av api.path er applikasjonens context-path. Resten er path til forvaltningsgrensesnittet
+      // Context-path brukes i openapi/servers.uri - mens de enkelte endepunktene er uten contextpath
+      // Spec fetch:  replace namePrefix with api.path  e.g. /proxy/fp-los → /fplos/forvaltning/api
+      // API calls:   replace namePrefix with contextPath  e.g. /proxy/fp-los → /fplos
+      //              Ser man på openapi.json så er requestene uten context-path
+      const contextPath = api.path.slice(
+        0,
+        Math.max(0, api.path.indexOf("/", 1)),
+      );
+      const isSpecFetch = urlFromRequest.pathname.endsWith("/openapi.json");
+      const replacement = isSpecFetch ? api.path : contextPath;
+      const pathFromRequest = urlFromRequest.pathname.replace(
+        namePrefix,
+        replacement,
+      );
 
       const queryString = urlFromRequest.searchParams.toString();
       const newPath =
@@ -71,8 +96,33 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
       );
       return newPath;
     },
+
+    // Erstatter openapi sin servers[0].url med proxy/name slik at "Try-it-out" virker
+    // alle "Try it out" kalls kommer med /proxy/<name>/... som blir erstattet med contextpath.
+    userResDecorator: (_proxyRes, proxyResData, userReq) => {
+      if (userReq.originalUrl?.includes("/openapi.json")) {
+        try {
+          const spec = JSON.parse(proxyResData.toString("utf8"));
+          spec.servers = [{ url: namePrefix }];
+          return JSON.stringify(spec);
+        } catch (error) {
+          logger.warning(
+            `Failed to parse openapi.json for ${api.name}: ${error}`,
+          );
+          return proxyResData;
+        }
+      }
+      return proxyResData;
+    },
+
     userResHeaderDecorator: (headers, userReq, userRes, proxyReq, proxyRes) => {
-      // FPSAK og TILBAKE sender er redirect med full hostname - dette må man modifisere slik at det går tilbake via proxy.
+      if (userReq.originalUrl?.includes("/openapi.json")) {
+        delete headers["content-length"];
+        delete headers["content-encoding"];
+        delete headers["etag"];
+        delete headers["last-modified"];
+      }
+      // FPSAK og TILBAKE sender redirect med full hostname — modifisere slik at det går tilbake via proxy.
       const location = proxyRes.headers.location;
       if (location?.includes(api.url)) {
         headers.location = location.split(api.url)[1];
@@ -89,6 +139,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
       }
       return headers;
     },
+
     proxyErrorHandler: function (err, res, next) {
       switch (err?.code) {
         case "ENOTFOUND": {
@@ -107,12 +158,13 @@ const proxyOptions = (api: ProxyConfig["apis"][0]) =>
         }
       }
     },
-  }) satisfies ProxyOptions;
+  };
+};
 
 export const setupProxies = (router: Router) => {
   for (const api of config.reverseProxyConfig.apis) {
     router.use(
-      `${api.path}/*splat`,
+      `/proxy/${api.name}/*splat`,
       (request, response, next) => {
         if (request.timedout) {
           logger.warning(`Request for ${request.originalUrl} timed out!`);
