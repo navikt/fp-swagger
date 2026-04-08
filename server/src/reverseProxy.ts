@@ -13,10 +13,6 @@ const stripTrailingSlash = (str: string) =>
 
 const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
   const namePrefix = `/proxy/${api.name}`;
-  // Første segment av api.path er applikasjonens context-path. Resten er path til forvaltningsgrensesnittet
-  // Context-path brukes i openapi/servers.uri
-  // Used to correctly rewrite paths for "Try it out" calls — avoids path doubling
-  const contextPath = api.path.slice(0, Math.max(0, api.path.indexOf("/", 1)));
 
   return {
     proxyReqOptDecorator: (options, request) => {
@@ -73,9 +69,15 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
         `http://${req.headers.host}`,
       );
 
+      // Første segment av api.path er applikasjonens context-path. Resten er path til forvaltningsgrensesnittet
+      // Context-path brukes i openapi/servers.uri - mens de enkelte endepunktene er uten contextpath
       // Spec fetch:  replace namePrefix with api.path  e.g. /proxy/fp-los → /fplos/forvaltning/api
       // API calls:   replace namePrefix with contextPath  e.g. /proxy/fp-los → /fplos
-      //              Using api.path here would double the path: /fplos/forvaltning/api/forvaltning/api/...
+      //              Ser man på openapi.json så er requestene uten context-path
+      const contextPath = api.path.slice(
+        0,
+        Math.max(0, api.path.indexOf("/", 1)),
+      );
       const isSpecFetch = urlFromRequest.pathname.endsWith("/openapi.json");
       const replacement = isSpecFetch ? api.path : contextPath;
       const pathFromRequest = urlFromRequest.pathname.replace(
@@ -95,8 +97,8 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
       return newPath;
     },
 
-    // Rewrite servers[0].url to the name-based proxy path so Swagger UI routes
-    // all "Try it out" calls through /proxy/<name>/... instead of /fplos/...
+    // Erstatter openapi sin servers[0].url med proxy/name slik at "Try-it-out" virker
+    // alle "Try it out" kalls kommer med /proxy/<name>/... som blir erstattet med contextpath.
     userResDecorator: (_proxyRes, proxyResData, userReq) => {
       if (userReq.originalUrl?.includes("/openapi.json")) {
         try {
