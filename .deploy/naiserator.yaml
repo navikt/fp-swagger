@@ -59,6 +59,7 @@ spec:
         - application: fpinntektsmelding
         - application: fpmottak
         - application: fpformidling
+        - application: fplos
       external:
         {{#each externals as |external|}}
         - host: "{{external}}"
