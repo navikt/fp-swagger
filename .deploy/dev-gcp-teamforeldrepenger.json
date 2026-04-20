@@ -12,7 +12,6 @@
   "externals": [
     "fpsak-api.dev-fss-pub.nais.io",
     "fptilbake.dev-fss-pub.nais.io",
-    "fplos.dev-fss-pub.nais.io",
     "fpabakus.dev-fss-pub.nais.io",
     "fprisk.dev-fss-pub.nais.io"
   ],
@@ -29,12 +28,6 @@
       "url": "https://fptilbake.dev-fss-pub.nais.io",
       "scope": "api://dev-fss.teamforeldrepenger.fptilbake/swagger",
       "name": "fp-tilbake"
-    },
-    {
-      "path": "/fplos/forvaltning/api",
-      "url": "https://fplos.dev-fss-pub.nais.io",
-      "scope": "api://dev-fss.teamforeldrepenger.fplos/swagger",
-      "name": "fp-los"
     },
     {
       "path": "/fpabakus/forvaltning/api",
@@ -82,7 +75,7 @@
       "path": "/fplos/forvaltning/api",
       "url": "http://fplos",
       "scope": "api://dev-gcp.teamforeldrepenger.fplos/swagger",
-      "name": "fp-los-gcp"
+      "name": "fp-los"
     }
   ]
 }
