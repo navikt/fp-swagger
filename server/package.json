@@ -36,14 +36,14 @@
     "@types/express-http-proxy": "1.6.7",
     "@types/morgan": "1.9.10",
     "@types/swagger-ui-express": "4.1.8",
-    "@typescript-eslint/eslint-plugin": "8.58.0",
-    "eslint": "10.2.0",
+    "@typescript-eslint/eslint-plugin": "8.58.2",
+    "eslint": "10.2.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-unicorn": "64.0.0",
-    "prettier": "3.8.1",
-    "typescript": "6.0.2",
-    "typescript-eslint": "8.58.0"
+    "prettier": "3.8.3",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.58.2"
   }
 }
