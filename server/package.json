@@ -17,7 +17,7 @@
     "@navikt/oasis": "4.1.4",
     "connect-timeout": "1.9.1",
     "cors": "2.8.6",
-    "dotenv": "17.4.1",
+    "dotenv": "17.4.2",
     "express": "5.2.1",
     "express-http-proxy": "2.1.2",
     "express-rate-limit": "8.3.2",
