@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
+  "pnpm": {
+    "onlyBuiltDependencies": []
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
