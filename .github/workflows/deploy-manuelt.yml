@@ -5,11 +5,11 @@ on:
       image:
         required: true
         type: string
-        description: 'Image tag to deploy (example 2023.03.10.080433-f821119)'
+        description: "Image tag to deploy (example 2023.03.10.080433-f821119)"
       environment:
         required: true
         type: choice
-        description: 'The environment to deployed to (dev|prod)'
+        description: "The environment to deployed to (dev|prod)"
         options:
           - dev
           - prod
@@ -24,4 +24,3 @@ jobs:
       gar: true
       image: ${{ inputs.image }}
       cluster: ${{ inputs.environment }}-gcp
-    secrets: inherit
