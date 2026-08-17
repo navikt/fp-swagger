@@ -42,6 +42,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
           reject(new Error("Intet Wonderwall token"));
         }
         if (token) {
+          // eslint-disable-next-line unicorn/prefer-await
           requestAzureOboToken(token, api.scopes).then((obo) => {
             if (obo.ok) {
               logger.info(
@@ -71,8 +72,8 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
 
       // Første segment av api.path er applikasjonens context-path. Resten er path til forvaltningsgrensesnittet
       // Context-path brukes i openapi/servers.uri - mens de enkelte endepunktene er uten contextpath
-      // Spec fetch:  replace namePrefix with api.path  e.g. /proxy/fp-los to /fplos/forvaltning/api
-      // API calls:   replace namePrefix with contextPath  e.g. /proxy/fp-los to /fplos
+      // Spec fetch:  replace namePrefix with api.path  e.g. '/proxy/fp-los' to '/fplos/forvaltning/api'
+      // API calls:   replace namePrefix with contextPath  e.g.   /proxy/fp-los' to '/fplos'
       //              Ser man på openapi.json så er requestene uten context-path
       const contextPath = api.path.slice(
         0,
@@ -83,13 +84,14 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
         namePrefix.length,
       ); // e.g. "/forvaltning/api/openapi.json"
       const isSpecFetch = urlFromRequest.pathname.endsWith("/openapi.json");
-      // If the request already includes the full api path suffix (e.g. /forvaltning/api/openapi.json), only prepend contextPath
+      // If the request already includes the full API path suffix (e.g. '/forvaltning/api/openapi.json'), only prepend contextPath
       const replacement =
         !isSpecFetch || pathAfterNamePrefix.startsWith(apiPathSuffix)
           ? contextPath
           : api.path;
       const pathFromRequest = urlFromRequest.pathname.replace(
         namePrefix,
+        // eslint-disable-next-line unicorn/no-unsafe-string-replacement
         replacement,
       );
 
@@ -105,7 +107,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
       return newPath;
     },
 
-    // Erstatter openapi sin servers[0].url med proxy/name slik at "Try-it-out" virker
+    // Erstatter openapi sin 'servers[0].url' med proxy/name slik at "Try-it-out" virker
     // alle "Try it out" kalls kommer med /proxy/<name>/... som blir erstattet med contextpath.
     userResDecorator: (_proxyRes, proxyResData, userReq) => {
       if (userReq.originalUrl?.includes("/openapi.json")) {

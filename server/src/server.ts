@@ -24,7 +24,7 @@ function startApp() {
     }),
   );
 
-  // Logging i json format
+  // Logging i JSON format
   server.use(logger.morganMiddleware);
 
   server.set("trust proxy", 1);
