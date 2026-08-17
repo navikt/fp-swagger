@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "pnpm": {
-    "onlyBuiltDependencies": []
-  },
-  "main": "dist/index.js",
+  "main": "dist/server.js",
+  "author": "NAV",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "tsc": "tsc --noEmit",
@@ -14,8 +13,6 @@
     "eslint:fix": "eslint --fix src/**/*.ts* --color",
     "prettier:fix": "prettier --write src"
   },
-  "author": "NAV",
-  "license": "MIT",
   "dependencies": {
     "@navikt/oasis": "4.1.4",
     "connect-timeout": "1.9.1",
@@ -23,9 +20,9 @@
     "dotenv": "17.4.2",
     "express": "5.2.1",
     "express-http-proxy": "2.1.2",
-    "express-rate-limit": "8.5.1",
-    "helmet": "8.1.0",
-    "morgan": "1.10.1",
+    "express-rate-limit": "8.6.2",
+    "helmet": "8.3.0",
+    "morgan": "1.11.0",
     "swagger-ui-express": "5.0.1",
     "ulid": "3.0.2",
     "winston": "3.19.0"
@@ -38,13 +35,12 @@
     "@types/express-http-proxy": "1.6.7",
     "@types/morgan": "1.9.10",
     "@types/swagger-ui-express": "4.1.8",
-    "eslint": "10.2.1",
-    "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.5",
-    "eslint-plugin-simple-import-sort": "13.0.0",
-    "eslint-plugin-unicorn": "64.0.0",
-    "prettier": "3.8.3",
+    "eslint": "10.8.1",
+    "eslint-plugin-prettier": "5.5.6",
+    "eslint-plugin-simple-import-sort": "14.0.0",
+    "eslint-plugin-unicorn": "66.0.0",
+    "prettier": "3.9.6",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.0"
+    "typescript-eslint": "8.67.0"
   }
 }
