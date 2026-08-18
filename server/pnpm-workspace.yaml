@@ -1,2 +1,10 @@
 allowBuilds:
   '@scarf/scarf': false
+
+minimumReleaseAge: 4320 # minutter
+
+minimumReleaseAgeExclude:
+  - body-parser@2.3.0
+
+overrides:
+  body-parser@>=2.0.0 <2.3.0: ^2.3.0
