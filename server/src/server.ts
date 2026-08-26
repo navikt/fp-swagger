@@ -67,12 +67,12 @@ function startApp() {
   );
 
   // Liveness and readiness probes for Kubernetes / nais
-  server.get(["/health/isAlive", "/health/isReady"], (req, res) => {
-    res.status(200).send("Alive");
+  server.get(["/health/isAlive", "/health/isReady"], (request, response) => {
+    response.status(200).send("Alive");
   });
 
-  server.get(["/oauth2/login"], async (req, res) => {
-    res.status(502).send({
+  server.get(["/oauth2/login"], async (request, response) => {
+    response.status(502).send({
       message: "Wonderwall must handle /oauth2/login",
     });
   });
@@ -80,9 +80,9 @@ function startApp() {
   // The routes below require the user to be authenticated
   server.use(verifyToken);
 
-  server.get(["/logout"], async (req, res) => {
-    if (req.headers.authorization) {
-      res.redirect("/oauth2/logout");
+  server.get(["/logout"], async (request, response) => {
+    if (request.headers.authorization) {
+      response.redirect("/oauth2/logout");
     }
   });
 

@@ -16,7 +16,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
 
   return {
     proxyReqOptDecorator: (options, request) => {
-      options.headers = options.headers ?? {};
+      options.headers ??= {};
       const requestTime = Date.now();
 
       options.headers[xNavCallId] = request.headers[xNavCallId] ?? ulid();
@@ -49,7 +49,7 @@ const proxyOptions = (api: ProxyConfig["apis"][0]): ProxyOptions => {
                 `Token veksling tok: (${Date.now() - requestTime}ms)`,
               );
               // I tilfelle headers er undefined.
-              options.headers = options.headers ?? {};
+              options.headers ??= {};
               options.headers.Authorization = `Bearer ${obo.token}`;
               resolve(options);
             } else {

@@ -2,9 +2,9 @@ import "dotenv/config";
 
 import logger from "./logger.js";
 
-const envVar = (name: string, required: boolean) => {
+const environmentVariable = (name: string, isRequired: boolean) => {
   // eslint-disable-next-line unicorn/no-computed-property-existence-check
-  if (!process.env[name] && required) {
+  if (isRequired && !process.env[name]) {
     const errorMessage = `Missing required environment variable '${name}'`;
     logger.error(errorMessage);
     throw new Error(errorMessage);
@@ -12,8 +12,8 @@ const envVar = (name: string, required: boolean) => {
   return process.env[name];
 };
 
-const configValueAsJson = (name: string, required: boolean) => {
-  const value = envVar(name, required);
+const configValueAsJson = (name: string, isRequired: boolean) => {
+  const value = environmentVariable(name, isRequired);
   if (!value) {
     return null;
   }
@@ -28,16 +28,17 @@ const configValueAsJson = (name: string, required: boolean) => {
 
 const server = {
   // should be equivalent to the URL this app is hosted on for correct CORS origin header
-  host: envVar("HOST", false) || "localhost",
+  host: environmentVariable("HOST", false) || "localhost",
 
   // port for your app
-  port: envVar("PORT", false) || 3000,
+  port: environmentVariable("PORT", false) || 3000,
 };
 
 const cors = {
-  allowedHeaders: envVar("CORS_ALLOWED_HEADERS", false) || "Nav-CallId",
-  exposedHeaders: envVar("CORS_EXPOSED_HEADERS", false) || "",
-  allowedMethods: envVar("CORS_ALLOWED_METHODS", false) || "",
+  allowedHeaders:
+    environmentVariable("CORS_ALLOWED_HEADERS", false) || "Nav-CallId",
+  exposedHeaders: environmentVariable("CORS_EXPOSED_HEADERS", false) || "",
+  allowedMethods: environmentVariable("CORS_ALLOWED_METHODS", false) || "",
 };
 
 export type ProxyConfig = {
@@ -84,7 +85,7 @@ const getProxyConfig = () => {
 };
 
 const swagger = {
-  customCss: envVar("CUSTOM_CSS", false) || "",
+  customCss: environmentVariable("CUSTOM_CSS", false) || "",
 };
 
 export default {
