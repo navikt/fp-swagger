@@ -35,12 +35,12 @@
     "@types/express-http-proxy": "1.6.7",
     "@types/morgan": "1.9.10",
     "@types/swagger-ui-express": "4.1.8",
-    "eslint": "10.9.1",
+    "eslint": "10.10.0",
     "eslint-plugin-prettier": "5.5.6",
     "eslint-plugin-simple-import-sort": "14.0.0",
     "eslint-plugin-unicorn": "74.0.0",
     "prettier": "3.9.6",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.68.0"
+    "typescript-eslint": "8.69.0"
   }
 }
