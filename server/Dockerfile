@@ -9,5 +9,6 @@ COPY package.json ./
 COPY node_modules ./node_modules
 COPY dist ./dist
 
+USER node
 EXPOSE 8080
 CMD ["dist/server.js"]
