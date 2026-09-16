@@ -14,7 +14,7 @@
     "prettier:fix": "prettier --write src"
   },
   "dependencies": {
-    "@navikt/oasis": "4.2.0",
+    "@navikt/oasis": "4.2.2",
     "connect-timeout": "1.9.1",
     "cors": "2.8.6",
     "dotenv": "17.4.2",
